@@ -17,12 +17,11 @@ Este repo es la fuente de verdad del equipo de CX de SnappyCommerce. Cada marca 
 Clientes/
 └── <Marca>/
     ├── Alcance Funcional <Marca>.md   ← qué necesita el cliente
-    └── tests/                         ← cómo verificamos cada necesidad
-        └── *.json
+    └── Tests <Marca>.json             ← cómo verificamos cada necesidad
 ```
 
 - La carpeta de cada cliente usa el nombre de la marca (por ejemplo `Clientes/Naldo/`).
-- El alcance se llama siempre `Alcance Funcional <Marca>.md`.
+- El alcance se llama siempre `Alcance Funcional <Marca>.md`, y los tests `Tests <Marca>.json` (un solo archivo por marca).
 - La primera línea del alcance (`> Fuente: …`) apunta al documento original en Drive.
 
 ## 🔁 Flujo de trabajo
@@ -34,7 +33,7 @@ Clientes/
  Alcance Funcional <Marca>.md ──► requisitos
         │  crear tests
         ▼
- tests/*.json ──► correr contra el bot ──► reporte de QA
+ Tests <Marca>.json ──► correr contra el bot ──► reporte de QA
         ▲                                     │
         └──────── corregir alcance / bot ◄────┘
 ```
