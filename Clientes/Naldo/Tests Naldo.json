@@ -1,0 +1,328 @@
+{
+  "marca": "Naldo",
+  "botUuid": "0c73d3f4-7133-41f6-992b-67c0b50e3d15",
+  "storeUuid": "a74dfe81-372a-48f6-a650-cb2cf1f1b18f",
+  "noTesteables": [
+    {
+      "requisito": "Configuración Global › País / versión de configuración",
+      "motivo": "es configuración interna del bot (país y versión del esquema), no tiene un comportamiento propio observable en una conversación"
+    },
+    {
+      "requisito": "Configuración Global › Interacciones de redes sociales",
+      "motivo": "el MCP de QA solo abre conversaciones de chat, no interacciones de redes sociales"
+    },
+    {
+      "requisito": "Configuración Global › Asistencia",
+      "motivo": "falta definirlo en el alcance (⚠ a completar): no hay datos de contacto, horario ni flujo outOfHours"
+    },
+    {
+      "requisito": "Configuración Global › Encuesta de satisfacción",
+      "motivo": "falta definirlo en el alcance (⚠ a completar); el envío de encuesta del flujo mayorista se verifica dentro de sus tests"
+    }
+  ],
+  "tests": [
+    {
+      "id": "T-001",
+      "nombre": "Buscar un producto del catálogo",
+      "requisitos": ["Configuración Global › Búsqueda de Producto (productSearch)"],
+      "tags": ["búsqueda de productos"],
+      "primerMensaje": "busco una heladera no frost",
+      "objetivo": "Verificar que el bot busque en el catálogo y muestre heladeras no frost disponibles, con información útil para elegir.",
+      "descripcion": "Sos un cliente que quiere comprar una heladera no frost para su casa. Si el bot pregunta por capacidad o presupuesto, decí que buscás algo de unos 300 litros y que no tenés un presupuesto fijo. Pedí ver alguna opción más si te muestra pocas. Cerrá la conversación cuando te haya mostrado productos; no compres.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-002",
+      "nombre": "Buscar un producto con mensaje corto y con error de tipeo",
+      "requisitos": ["Configuración Global › Búsqueda de Producto (productSearch)"],
+      "tags": ["búsqueda de productos"],
+      "primerMensaje": "tenen lavaropas",
+      "objetivo": "Verificar que el bot entienda una búsqueda escueta y mal escrita y muestre lavarropas del catálogo.",
+      "descripcion": "Sos un cliente apurado que escribe poco y con errores. Si el bot te pide más detalles, contestá con respuestas cortas: carga frontal, 8 kilos. Cerrá cuando te haya mostrado opciones; no compres.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-003",
+      "nombre": "Pedir una recomendación de producto",
+      "requisitos": ["Configuración Global › Recomendación de Producto (productRecommendation)"],
+      "tags": ["recomendación"],
+      "primerMensaje": "necesito un lavarropas para una familia de 4, cuál me recomendás?",
+      "objetivo": "Verificar que el bot recomiende productos acordes a la necesidad planteada y explique por qué los sugiere.",
+      "descripcion": "Sos un cliente que no sabe mucho de lavarropas. Si el bot pregunta, decí que lavan casi todos los días, que preferís carga frontal y que el presupuesto es medio. Preguntá cuál de las opciones conviene más. No compres.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-004",
+      "nombre": "Comprar un producto y recibir el link de pago sin dar datos",
+      "requisitos": ["Configuración Global › Comenzar checkout (generateCheckout)"],
+      "tags": ["checkout"],
+      "primerMensaje": "quiero comprar un smart tv de 50 pulgadas, cómo hago?",
+      "objetivo": "Verificar que el bot comparta un link de compra del producto elegido sin pedir nombre, apellido, email ni dirección de envío.",
+      "descripcion": "Sos un cliente decidido a comprar. Elegí el primer televisor de 50 pulgadas con stock que te muestre el bot (si no hay de 50, aceptá uno de 55 o 43) y pedí el link para pagar. No des datos personales por iniciativa propia; si el bot te los pide, anotalo y respondé que preferís pagar directo desde el link. No completes el pago.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-005",
+      "nombre": "Consultar promociones vigentes",
+      "requisitos": ["Configuración Global › Promociones"],
+      "tags": ["promociones"],
+      "primerMensaje": "qué promociones tienen ahora?",
+      "objetivo": "Verificar que el bot responda solo con las promociones informadas en Conocimientos y, si no hay una vigente, aclare que hay productos con la promoción incluida en el precio y ofrezca la ayuda de una persona del equipo.",
+      "descripcion": "Sos un cliente que quiere aprovechar alguna promo. Si el bot te muestra promociones, preguntá si aplican a electrodomésticos. Si te ofrece hablar con una persona, aceptá y cerrá la conversación. No insistas para que invente descuentos.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-006",
+      "nombre": "Preguntar por un descuento con tarjeta que puede no existir",
+      "requisitos": ["Configuración Global › Promociones"],
+      "tags": ["promociones"],
+      "primerMensaje": "hay descuento pagando con tarjeta de crédito? o cuotas sin interés?",
+      "objetivo": "Verificar que el bot no invente promociones ni cuotas que no estén en Conocimientos y que, si no tiene la información, ofrezca la ayuda de una persona del equipo.",
+      "descripcion": "Sos un cliente que quiere pagar en cuotas. Si el bot te da una respuesta, preguntá con qué bancos aplica. Si no tiene el dato o te ofrece hablar con una persona, aceptá y cerrá. No le des información sobre promos para que la repita.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-007",
+      "nombre": "Consulta de compra mayorista",
+      "requisitos": ["Flujos de Pre-Venta › mayorista"],
+      "tags": ["mayorista"],
+      "primerMensaje": "quiero hacer una compra mayorista",
+      "objetivo": "Verificar que el bot pida el producto y la cantidad, genere el ticket de venta mayorista, derive al sector de ventas y cierre con la encuesta de satisfacción.",
+      "descripcion": "Sos el dueño de un hotel chico. Cuando el bot pida qué producto buscás, decí colchones de 2 plazas; cuando pida la cantidad, decí 20 unidades. Si pide datos de contacto, decí que preferís que te contacten por este mismo chat. Si te ofrece una encuesta, respondela con la mejor nota. No pidas precios.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-008",
+      "nombre": "Venta a empresa con producto y cantidad en el primer mensaje",
+      "requisitos": ["Flujos de Pre-Venta › mayorista"],
+      "tags": ["mayorista"],
+      "primerMensaje": "hacen venta a empresas? necesito 15 aires acondicionados para unas oficinas",
+      "objetivo": "Verificar que una consulta de venta a empresas active el flujo mayorista y termine en el ticket a ventas con el producto y la cantidad, sin volver a pedir datos que el cliente ya dio.",
+      "descripcion": "Sos el encargado de compras de una empresa. Ya dijiste producto y cantidad: si el bot te los vuelve a pedir, repetilos pero anotalo. Si pide más detalles, decí que son aires split de 3000 frigorías. Si te ofrece una encuesta, respondela con la mejor nota.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-009",
+      "nombre": "Solicitar un crédito",
+      "requisitos": ["Flujos de Pre-Venta › SolicitudDeCredito"],
+      "tags": ["crédito"],
+      "primerMensaje": "quiero sacar un crédito para comprar una heladera",
+      "objetivo": "Verificar que el bot derive al sector de administración, comparta la información de solicitud de crédito y ofrezca las sucursales donde gestionarlo.",
+      "descripcion": "Sos un cliente que quiere financiar una compra con crédito de Naldo. Si el bot pregunta dónde vivís, decí que en Corrientes capital. Preguntá qué requisitos piden. Cerrá cuando te haya dado la información y las sucursales.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo",
+      "nota": "La clasificación del flujo está a confirmar en el alcance."
+    },
+    {
+      "id": "T-010",
+      "nombre": "Pedir una evaluación crediticia",
+      "requisitos": ["Flujos de Pre-Venta › SolicitudDeCredito"],
+      "tags": ["crédito"],
+      "primerMensaje": "me pueden hacer una evaluación crediticia?",
+      "objetivo": "Verificar que el pedido de evaluación crediticia active el flujo de solicitud de crédito: derivación a administración, información de crédito y búsqueda de sucursales.",
+      "descripcion": "Sos un cliente que quiere saber si califica para un crédito. Si el bot pide tu ubicación, decí que estás en Resistencia, Chaco. No des documento ni datos personales; si te los pide, decí que preferís hacerlo en la sucursal.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo",
+      "nota": "La clasificación del flujo está a confirmar en el alcance."
+    },
+    {
+      "id": "T-011",
+      "nombre": "Producto que llegó sin funcionar (garantía)",
+      "requisitos": ["Flujos de Post-Venta › FlujopostventaQRok", "Flujos de Post-Venta › createTicket:override:postsales"],
+      "tags": ["posventa"],
+      "primerMensaje": "me llegó el lavarropas y no anda",
+      "objetivo": "Verificar que el bot envíe el mensaje exacto \"Gracias por contactarte con el servicio de post venta de Naldo\", pida producto, falla y sucursal de compra, genere el ticket de garantía y avise que posventa se contactará dentro de las próximas 24hs hábiles.",
+      "descripcion": "Sos un cliente que compró un lavarropas hace una semana. Cuando el bot pida los datos: producto = lavarropas Drean de 8 kg, falla = no centrifuga y hace un ruido fuerte, sucursal = la de Corrientes centro (si te muestra una lista de sucursales, elegí una de Corrientes). Si pide datos de contacto, dalos inventados y genéricos (Juan Prueba, prueba.qa@ejemplo.com). Cerrá después del aviso de las 24hs.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo",
+      "nota": "createTicket:override:postsales no tiene descripción en el alcance; se verifica que la búsqueda de sucursales ocurra antes de crear el ticket."
+    },
+    {
+      "id": "T-012",
+      "nombre": "Garantía con una sola palabra",
+      "requisitos": ["Flujos de Post-Venta › FlujopostventaQRok"],
+      "tags": ["posventa"],
+      "primerMensaje": "garantía",
+      "objetivo": "Verificar que un mensaje de una sola palabra active el flujo de posventa con el mensaje exacto de bienvenida a posventa y el pedido de producto, falla y sucursal.",
+      "descripcion": "Sos un cliente con un microondas que dejó de calentar a los dos meses. Respondé con mensajes cortos: producto = microondas, falla = no calienta, sucursal = Posadas. Cerrá después del aviso de que posventa se va a comunicar.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-013",
+      "nombre": "Producto roto con poco uso y falla en el primer mensaje",
+      "requisitos": ["Flujos de Post-Venta › FlujopostventaQRok"],
+      "tags": ["posventa"],
+      "primerMensaje": "casi no la usé y se rompió la tele, no prende más",
+      "objetivo": "Verificar que el bot active posventa, aproveche el producto y la falla ya informados y solo pida lo que falta (la sucursal) antes de generar el ticket de garantía.",
+      "descripcion": "Sos un cliente enojado pero educado. Ya dijiste producto (televisor) y falla (no prende). Si el bot te los vuelve a pedir, repetilos pero anotalo. Sucursal = Santiago del Estero. Cerrá después del aviso de las 24hs.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-014",
+      "nombre": "Consultar dónde está la compra no activa posventa",
+      "requisitos": ["Flujos de Post-Venta › FlujopostventaQRok"],
+      "tags": ["posventa", "caso negativo"],
+      "primerMensaje": "dónde está mi compra? todavía no me llegó",
+      "objetivo": "Verificar que una consulta de seguimiento no dispare el flujo de posventa: no debe aparecer el mensaje de servicio de post venta ni pedirse producto, falla y sucursal.",
+      "descripcion": "Sos un cliente que compró hace unos días y quiere saber cuándo le llega. Si el bot pide número de pedido, decí que no lo tenés a mano. Si te ofrece hablar con una persona, aceptá y cerrá. No menciones fallas ni garantía.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-015",
+      "nombre": "Pedir la factura no activa posventa",
+      "requisitos": ["Flujos de Post-Venta › FlujopostventaQRok"],
+      "tags": ["posventa", "caso negativo"],
+      "primerMensaje": "necesito la factura de mi compra",
+      "objetivo": "Verificar que un pedido de factura no dispare el flujo de posventa ni genere un ticket de garantía.",
+      "descripcion": "Sos un cliente que compró online y necesita la factura para presentarla en el trabajo. Respondé lo que el bot pregunte con datos genéricos y sin mencionar fallas. Cerrá cuando te diga cómo conseguirla o te ofrezca una persona.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-016",
+      "nombre": "Cancelar un pedido todavía no despachado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced",
+        "Configuración Global › Estado de Pedido (orderStatus)",
+        "Configuración Global › Crear contacto"
+      ],
+      "tags": ["cancelación", "datos de contacto"],
+      "primerMensaje": "quiero cancelar mi pedido",
+      "objetivo": "Verificar que el bot explique que necesita el estado del pedido, pida número o email, y con un pedido no despachado pida el motivo y los datos de contacto (nombre, email, teléfono y DNI) para generar el ticket de cancelación.",
+      "descripcion": "Sos un cliente que compró hace dos días. Cuando el bot pida número de pedido o email, dale el pedido PEDIDO_APPROVED (en estado approved, preparing, awaiting-payment, created o invoiced; si el bot dice que está en otro estado, anotalo y cerrá). Motivo = lo encontré más barato en otro lado. Datos de contacto inventados: Juan Prueba, prueba.qa@ejemplo.com, 3794000000, DNI 30000000. Cerrá cuando confirme el ticket.",
+      "requiereDatosEspecificos": true,
+      "estado": "activo",
+      "nota": "Falta completar PEDIDO_APPROVED con un pedido real en uno de esos estados."
+    },
+    {
+      "id": "T-017",
+      "nombre": "Cancelar con el motivo dicho de entrada",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced"
+      ],
+      "tags": ["cancelación"],
+      "primerMensaje": "me arrepentí de la compra, la quiero anular porque ya no la necesito",
+      "objetivo": "Verificar que el bot active la cancelación y, con un pedido no despachado, guarde el motivo ya dicho sin volver a pedirlo antes de generar el ticket.",
+      "descripcion": "Sos un cliente que se arrepintió. Cuando el bot pida número de pedido o email, dale el pedido PEDIDO_APPROVED (si el bot dice que está en otro estado, anotalo y cerrá). Si te vuelve a pedir el motivo, repetilo pero anotalo. Datos de contacto inventados: Ana Prueba, ana.qa@ejemplo.com, 3794111111, DNI 31000000.",
+      "requiereDatosEspecificos": true,
+      "estado": "activo",
+      "nota": "Falta completar PEDIDO_APPROVED con un pedido real en estado approved, preparing, awaiting-payment, created o invoiced."
+    },
+    {
+      "id": "T-018",
+      "nombre": "Cancelar un pedido que ya está en camino",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: shipped",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": ["cancelación"],
+      "primerMensaje": "quiero cancelar mi compra",
+      "objetivo": "Verificar que, con un pedido despachado, el bot informe que está en camino y no puede cancelarse hasta recibirlo, mencione que después se puede seguir con la devolución y no genere ticket.",
+      "descripcion": "Sos un cliente que quiere cancelar. Cuando el bot pida número de pedido o email, dale el pedido PEDIDO_SHIPPED (en estado shipped; si el bot dice que está en otro estado, anotalo y cerrá). Insistí una vez diciendo que lo necesitás cancelar igual; no aceptes otras opciones.",
+      "requiereDatosEspecificos": true,
+      "estado": "activo",
+      "nota": "Falta completar PEDIDO_SHIPPED con un pedido real en estado shipped."
+    },
+    {
+      "id": "T-019",
+      "nombre": "Cancelar un pedido con número inexistente",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": ["cancelación"],
+      "primerMensaje": "quiero anular un pedido",
+      "objetivo": "Verificar que, con un número de pedido que no existe, el bot avise que no lo encontró y pida verificarlo, sin generar ticket ni pedir otros datos.",
+      "descripcion": "Sos un cliente que se equivocó al copiar el número. Cuando el bot pida número de pedido o email, dale el número 99999999. Cuando te pida verificarlo, decí que lo vas a revisar y cerrá.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-020",
+      "nombre": "Cancelar con un email sin pedidos",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": ["cancelación"],
+      "primerMensaje": "quiero cancelar la compra que hice",
+      "objetivo": "Verificar que el bot acepte el email como alternativa al número de pedido y, si no encuentra un pedido, avise y pida verificar el dato sin generar ticket.",
+      "descripcion": "Sos un cliente que no tiene el número de pedido. Cuando el bot lo pida, decí que no lo tenés y que tu email es qa.sin.pedidos@ejemplo.com. Si te pide verificar el dato, decí que lo vas a revisar y cerrá.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-021",
+      "nombre": "Cancelar un pedido ya entregado",
+      "requisitos": ["Flujos de Post-Venta › cancelarPedido", "Configuración Global › Estado de Pedido (orderStatus)"],
+      "tags": ["cancelación"],
+      "primerMensaje": "quiero cancelar un pedido",
+      "objetivo": "Verificar que, con un pedido entregado, el bot indique que lo revisará una persona del equipo y ofrezca la derivación.",
+      "descripcion": "Sos un cliente que recibió el pedido y se arrepintió. Cuando el bot pida número de pedido o email, dale el pedido PEDIDO_ENTREGADO (en estado entregado; si el bot dice que está en otro estado, anotalo y cerrá). Aceptá la derivación a una persona y cerrá.",
+      "requiereDatosEspecificos": true,
+      "estado": "activo",
+      "nota": "Falta completar PEDIDO_ENTREGADO con un pedido real entregado."
+    },
+    {
+      "id": "T-022",
+      "nombre": "Cancelar un pedido que ya está cancelado",
+      "requisitos": ["Flujos de Post-Venta › cancelarPedido", "Configuración Global › Estado de Pedido (orderStatus)"],
+      "tags": ["cancelación"],
+      "primerMensaje": "cancelen mi pedido por favor",
+      "objetivo": "Verificar que, con un pedido ya cancelado, el bot indique que lo revisará una persona del equipo y ofrezca la derivación.",
+      "descripcion": "Sos un cliente que no sabe que su pedido ya fue cancelado. Cuando el bot pida número de pedido o email, dale el pedido PEDIDO_CANCELADO (en estado cancelado; si el bot dice que está en otro estado, anotalo y cerrá). Aceptá la derivación y cerrá.",
+      "requiereDatosEspecificos": true,
+      "estado": "activo",
+      "nota": "Falta completar PEDIDO_CANCELADO con un pedido real cancelado."
+    },
+    {
+      "id": "T-023",
+      "nombre": "Cambio de tema durante la cancelación",
+      "requisitos": ["Flujos de Post-Venta › cancelarPedido", "Configuración Global › Promociones"],
+      "tags": ["cancelación", "cambio de tema"],
+      "primerMensaje": "quiero cancelar mi pedido",
+      "objetivo": "Verificar que, si el cliente cambia de tema cuando el bot le pide el número de pedido, el bot atienda la nueva consulta sin forzarlo a seguir con la cancelación.",
+      "descripcion": "Sos un cliente indeciso. Cuando el bot pida el número de pedido o el email, no lo des: decí \"pará, antes decime si tienen alguna promo en heladeras, capaz no cancelo\". Seguí la charla sobre promociones y cerrá sin volver a la cancelación.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo"
+    },
+    {
+      "id": "T-024",
+      "nombre": "Pedir un cambio de producto",
+      "requisitos": ["Flujos de Post-Venta › Cambio"],
+      "tags": ["cambios"],
+      "primerMensaje": "quiero hacer un cambio de mi producto",
+      "objetivo": "Verificar que el bot comparta la política de cambios y derive al sector de soporte, sin activar el flujo de posventa por garantía.",
+      "descripcion": "Sos un cliente que compró una silla y la quiere cambiar por otro color, sin ninguna falla. Preguntá cuántos días tenés para hacer el cambio. Si te deriva a una persona, aceptá y cerrá. No menciones roturas.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo",
+      "nota": "El flujo Cambio está a confirmar en el alcance, y las FAQ de cambios tienen plazos contradictorios (30 vs. 10 días): anotá qué plazo informa el bot."
+    },
+    {
+      "id": "T-025",
+      "nombre": "Querer cambiar algo de la compra",
+      "requisitos": ["Flujos de Post-Venta › Cambio"],
+      "tags": ["cambios"],
+      "primerMensaje": "quiero cambiar algo de mi compra",
+      "objetivo": "Verificar que esta formulación active el flujo de cambios: política de cambios y derivación a soporte.",
+      "descripcion": "Sos un cliente que compró un juego de sábanas de la medida equivocada. Si el bot pregunta qué querés cambiar, explicalo. Si te deriva a una persona, aceptá y cerrá. No menciones fallas ni cancelaciones.",
+      "requiereDatosEspecificos": false,
+      "estado": "activo",
+      "nota": "El flujo Cambio está a confirmar en el alcance."
+    }
+  ]
+}
