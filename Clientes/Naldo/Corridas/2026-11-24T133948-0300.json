@@ -1,0 +1,2080 @@
+{
+  "corrida": {
+    "fecha": "2026-11-24T13:39:48-03:00",
+    "marca": "Naldo",
+    "storeUuid": "a74dfe81-372a-48f6-a650-cb2cf1f1b18f",
+    "botUuid": "0c73d3f4-7133-41f6-992b-67c0b50e3d15",
+    "iteracionesPorTest": 3,
+    "filtro": {
+      "tests": [],
+      "requisitos": [],
+      "tags": []
+    },
+    "repo": {
+      "rama": "tests-conversacionales",
+      "commit": "dbcb964f29aba98dc1a2a65eb9cdff2bdab53ff6",
+      "cambiosSinCommitear": false
+    },
+    "configBot": null,
+    "corridaAnterior": null
+  },
+  "resultados": [
+    {
+      "test": "T-001",
+      "nombre": "Buscar un producto del catálogo",
+      "requisitos": [
+        "Configuración Global › Búsqueda de Producto (productSearch)"
+      ],
+      "tags": [
+        "búsqueda de productos"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito 'Búsqueda de Producto (productSearch)' con valor ACTIVADO y objetivo 'buscar en el catálogo y mostrar heladeras no frost disponibles con información útil para elegir'. Ante 'busco una heladera no frost' el bot respondió con un carrusel de productos (flujo display_product_carousel) con 5 heladeras No Frost, cada una con nombre, precio actual, precio de lista, % de descuento, link al producto y descripción, más el texto '¿Te sirve este o buscás otra cosa?'. Cumple el objetivo: muestra heladeras no frost con información útil para elegir. Nota: mcp_send_message devolvió completion 'timeout' (180 s) aunque el bot emitió las 3 salidas completas; no hubo error de tool. El cliente cerró la conversación al recibir productos, según instrucciones (5 opciones, no hacía falta pedir más).",
+      "conversationUuid": "80860ec9-0324-4ae2-aec8-59976933eb7e",
+      "datosCambiados": false,
+      "datosUsados": "Búsqueda inicial 'busco una heladera no frost'. Sin datos específicos. Sin respuesta a preguntas de capacidad/presupuesto porque el bot no las hizo.",
+      "transcripcion": [
+        "user: busco una heladera no frost",
+        "bot: ¡Tenemos varias heladeras No Frost para que veas! Te muestro algunas opciones con sus precios:",
+        "bot: [carrusel de productos] 1. Heladera Samsung No Frost 290 Litros RT29K507JS8 - $947999 (39% OFF, lista $1550768) https://www.naldo.com.ar/290l-rt29k507js8-silver-n-f-207986-1/p ; 2. Heladera Electrolux No Frost Bottom Freezer 400 Litros IB6S - $1449999 (29% OFF, lista $2033332) https://www.naldo.com.ar/429l-ib6s-inox-inverter-a-c-n-f-208880/p ; 3. Heladera Samsung No Frost 328Litros Inverter Freezer Inferior Plata - $1869999 (31% OFF, lista $2692306) https://www.naldo.com.ar/207544/p ; 4. Heladera Midea 340 Litros No Frost MDRT489 Blanca Inverter - $949999 (23% OFF, lista $1230768) https://www.naldo.com.ar/340l-mdrt489-blanca-a-n-f-inv-c-disp-208689-1/p ; 5. Heladera Gafa No Frost 239l Inverter HGNF255B Blanca - $829999 (46% OFF, lista $1549999) https://www.naldo.com.ar/239l-hgnf255b-blanca-n-f-inv-209185/p",
+        "bot: ¿Te sirve este o buscás otra cosa?"
+      ]
+    },
+    {
+      "test": "T-001",
+      "nombre": "Buscar un producto del catálogo",
+      "requisitos": [
+        "Configuración Global › Búsqueda de Producto (productSearch)"
+      ],
+      "tags": [
+        "búsqueda de productos"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito 'Búsqueda de Producto (productSearch)' con valor ACTIVADO: el flujo nativo respondió a la búsqueda y mostró un carrusel de productos. Objetivo cumplido: el bot buscó en el catálogo y mostró 5 heladeras No Frost disponibles (Samsung 290L, Electrolux 400L bottom freezer, Samsung 328L inverter, Midea 340L inverter, Gafa 239L inverter), cada una con precio, precio de lista y % de descuento, link al producto, descripción y clasificación energética. No fue necesario preguntar capacidad ni presupuesto porque el bot no los pidió. El cliente cerró tras la primera muestra de productos, sin comprar. Observación no bloqueante: mcp_send_message devolvió completion 'timeout' (180378 ms) aunque los 3 outputs llegaron; el turno tardó más de lo esperado.",
+      "conversationUuid": "bf1bea6d-3a1f-4abb-adb3-79382d6cdf76",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos (Requiere datos específicos: false). Único mensaje del cliente: 'busco una heladera no frost'. No se dio capacidad ni presupuesto porque el bot no los preguntó.",
+      "transcripcion": [
+        "user: busco una heladera no frost",
+        "bot: ¡Tenemos varias heladeras No Frost para que compares!",
+        "bot: ¿Te sirve este o buscás otra cosa?",
+        "bot: [carrusel de productos] 1. Heladera Samsung No Frost 290 Litros RT29K507JS8 - $947999 (39% OFF, lista $1550768); 2. Heladera Electrolux No Frost Bottom Freezer 400 Litros IB6S - $1449999 (29% OFF, lista $2033332); 3. Heladera Samsung No Frost 328 Litros Inverter Freezer Inferior Plata - $1869999 (31% OFF, lista $2692306); 4. Heladera Midea 340 Litros No Frost MDRT489 Blanca Inverter - $949999 (23% OFF, lista $1230768); 5. Heladera Gafa No Frost 239L Inverter HGNF255B Blanca - $829999 (46% OFF, lista $1549999)"
+      ]
+    },
+    {
+      "test": "T-001",
+      "nombre": "Buscar un producto del catálogo",
+      "requisitos": [
+        "Configuración Global › Búsqueda de Producto (productSearch)"
+      ],
+      "tags": [
+        "búsqueda de productos"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito 'Búsqueda de Producto (productSearch)' con valor ACTIVADO y objetivo 'Verificar que el bot busque en el catálogo y muestre heladeras no frost disponibles, con información útil para elegir'. Ante 'busco una heladera no frost' el bot respondió 'Tenemos varias heladeras No Frost para que compares' y mostró un carrusel con 5 heladeras No Frost del catálogo (productCarousel, herramienta catalog_search + display_product_carousel ejecutadas OK). Cada opción trae nombre con capacidad en litros, precio actual, precio de lista y % de descuento, link al producto y descripción con eficiencia energética. Cumple el objetivo. No hizo falta enviar mensajes adicionales: el cliente debía cerrar al mostrar productos y el carrusel mostró 5 opciones (no 'pocas'). Turno completado con completion turn.end, sin errores ni timeouts.",
+      "conversationUuid": "952ef8ac-e371-444f-b0b0-8ab8ad46692a",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos (Requiere datos específicos: false). Primer mensaje: 'busco una heladera no frost'. Capacidad ~300 L y presupuesto no fueron necesarios porque el bot no los preguntó.",
+      "transcripcion": [
+        "user: busco una heladera no frost",
+        "bot: ¡Qué bueno! Tenemos varias heladeras No Frost para que compares. te paso algunas opciones:\n\n¿Te sirve este o buscás otra cosa?",
+        "bot: [carrusel de productos] 1. Heladera Samsung No Frost 290 Litros RT29K507JS8 - $947999 (39% OFF, precio de lista $1550768) https://www.naldo.com.ar/290l-rt29k507js8-silver-n-f-207986-1/p | 2. Heladera Electrolux No Frost Bottom Freezer 400 Litros IB6S - $1449999 (29% OFF, precio de lista $2033332) https://www.naldo.com.ar/429l-ib6s-inox-inverter-a-c-n-f-208880/p | 3. Heladera Samsung No Frost 328Litros Inverter Freezer Inferior Plata - $1869999 (31% OFF, precio de lista $2692306) https://www.naldo.com.ar/207544/p | 4. Heladera Midea 340 Litros No Frost MDRT489 Blanca Inverter - $949999 (23% OFF, precio de lista $1230768) https://www.naldo.com.ar/340l-mdrt489-blanca-a-n-f-inv-c-disp-208689-1/p | 5. Heladera Gafa No Frost 239L Inverter HGNF255B Blanca - $829999 (46% OFF, precio de lista $1549999) https://www.naldo.com.ar/239l-hgnf255b-blanca-n-f-inv-209185/p"
+      ]
+    },
+    {
+      "test": "T-002",
+      "nombre": "Buscar un producto con mensaje corto y con error de tipeo",
+      "requisitos": [
+        "Configuración Global › Búsqueda de Producto (productSearch)"
+      ],
+      "tags": [
+        "búsqueda de productos"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito pide que el bot entienda una busqueda escueta y mal escrita (Busqueda de Producto / productSearch, ACTIVADO) y muestre lavarropas del catalogo. Al mensaje 'tenen lavaropas' el bot respondio '¡Si, tenemos lavarropas! Te muestro los modelos disponibles:' y mostro un carrusel de productos reales del catalogo (Lavarropas Whirlpool 9KG Wnq90ab, Lavarropas Midea 8kg Mf200w80wb/T-A1, Lavarropas Whirlpool 7kg Wnq70bb), seguido de '¿Cual te gusta mas?'. Se cumple el objetivo sin necesidad de mas turnos, por lo que el cliente cerro sin comprar. Nota: mcp_send_message devolvio completion 'timeout' (180s) pero el historial de la conversacion muestra las 3 respuestas del bot, asi que el flujo funciono; el timeout parece ser de deteccion de fin de turno y no de la respuesta del bot.",
+      "conversationUuid": "a23aa405-1847-4716-bc61-4c5ae09e390a",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial 'tenen lavaropas' (sin datos adicionales; no hizo falta responder 'carga frontal, 8 kilos' porque el bot mostro opciones directamente). Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15.",
+      "transcripcion": [
+        "user: tenen lavaropas",
+        "bot: ¡Sí, tenemos lavarropas! Te muestro los modelos disponibles:",
+        "bot: [carrusel de producto] 1. Lavarropas Whirlpool 9KG Wnq90ab Inv 1400RPM 15 Prog Blanco - $1199999.00 (27% OFF) | 2. Lavarropas Midea 8kg Mf200w80wb/T-A1 1400rpm Titanio A+ - $793999.00 (16% OFF) | 3. Lavarropas Whirlpool 7kg Wnq70bb Inv 1200rpm 15programas Blanco - $878999.00 (35% OFF)",
+        "bot: ¿Cual te gusta mas?"
+      ]
+    },
+    {
+      "test": "T-002",
+      "nombre": "Buscar un producto con mensaje corto y con error de tipeo",
+      "requisitos": [
+        "Configuración Global › Búsqueda de Producto (productSearch)"
+      ],
+      "tags": [
+        "búsqueda de productos"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito: Búsqueda de Producto (productSearch) ACTIVADO, objetivo: que el bot entienda una búsqueda escueta y mal escrita y muestre lavarropas del catálogo. Al mensaje 'tenen lavaropas' (escueto, con error de tipeo) el bot respondió '¡Sí, tenemos lavarropas! Te muestro los modelos disponibles:' y mostró un carrusel de producto con 3 lavarropas del catálogo (Whirlpool 9KG Wnq90ab, Midea 8kg Mf200w80wb/T-A1, Whirlpool 7kg Wnq70bb). Cumple el objetivo sin necesidad de respuestas adicionales. Nota: el turno terminó con completion 'timeout' (traceSummary vacío, 180 s), pero las respuestas del bot sí llegaron y se verificaron en la transcripción; no se considera fallo del requisito.",
+      "conversationUuid": "f993230b-7317-49df-936f-df70f0107ec0",
+      "datosCambiados": false,
+      "datosUsados": "Ninguno específico. Mensaje inicial exacto: 'tenen lavaropas'. No se necesitaron respuestas de seguimiento (carga frontal, 8 kilos) porque el bot mostró opciones en el primer turno.",
+      "transcripcion": [
+        "user: tenen lavaropas",
+        "bot: ¡Sí, tenemos lavarropas! Te muestro los modelos disponibles:",
+        "bot: [carrusel de producto] 1. Lavarropas Whirlpool 9KG Wnq90ab Inv 1400RPM 15 Prog Blanco - $1199999.00 (27% OFF); 2. Lavarropas Midea 8kg Mf200w80wb/T-A1 1400rpm Titanio A+ - $793999.00 (16% OFF); 3. Lavarropas Whirlpool 7kg Wnq70bb Inv 1200rpm 15programas Blanco - $878999.00 (35% OFF)",
+        "bot: ¿Cuál te gusta más?"
+      ]
+    },
+    {
+      "test": "T-002",
+      "nombre": "Buscar un producto con mensaje corto y con error de tipeo",
+      "requisitos": [
+        "Configuración Global › Búsqueda de Producto (productSearch)"
+      ],
+      "tags": [
+        "búsqueda de productos"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito (Búsqueda de Producto nativo ACTIVADO, objetivo: entender una búsqueda escueta y mal escrita y mostrar lavarropas del catálogo). El cliente escribió 'tenen lavaropas' (escueta, con error de tipeo). El bot respondió '¡Sí, tenemos lavarropas! Te muestro los modelos disponibles:' y mostró un carrusel de productos del catálogo con 3 lavarropas (Whirlpool 9KG Wnq90ab, Midea 8kg Mf200w80wb/T-A1, Whirlpool 7kg Wnq70bb), con precio, descuento y link. Cumple el objetivo. Nota: el turno terminó por timeout (completion: timeout) aunque el bot emitió 3 outputs con las opciones; no afecta el resultado funcional. Como ya se mostraron opciones, se cerró la conversación sin continuar ni comprar.",
+      "conversationUuid": "5aa261d7-95f1-4e08-8d8d-353e12d8297a",
+      "datosCambiados": false,
+      "datosUsados": "Ninguno: el primer mensaje fue 'tenen lavaropas'; no hizo falta responder con carga frontal ni 8 kilos porque el bot mostró opciones directamente.",
+      "transcripcion": [
+        "user: tenen lavaropas",
+        "bot: ¡Sí, tenemos lavarropas! Te muestro los modelos disponibles:",
+        "bot: [carrusel de productos] 1. Lavarropas Whirlpool 9KG Wnq90ab Inv 1400RPM 15 Prog Blanco - $1199999.00 (27% OFF); 2. Lavarropas Midea 8kg Mf200w80wb/T-A1 1400rpm Titanio A+ - $793999.00 (16% OFF); 3. Lavarropas Whirlpool 7kg Wnq70bb Inv 1200rpm 15programas Blanco - $878999.00 (35% OFF)",
+        "bot: ¿Cuál te gusta más?"
+      ]
+    },
+    {
+      "test": "T-003",
+      "nombre": "Pedir una recomendación de producto",
+      "requisitos": [
+        "Configuración Global › Recomendación de Producto (productRecommendation)"
+      ],
+      "tags": [
+        "recomendación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito: Recomendación de Producto (productRecommendation) ACTIVADO, objetivo: recomendar productos acordes a la necesidad y explicar por qué. Tras el primer mensaje el bot respondió que no tenía lavarropas (y sugirió Dormitorio y Comedor); el guardrail knowledge_grounding reescribió esa respuesta porque la única coincidencia del catálogo era una carpa. Tras la segunda consulta del cliente (lavado casi diario, carga frontal, presupuesto medio, pedido de recomendación con motivo), el bot recomendó el Lavarropas Drean 6kg LCFDR0610LB1 1000rpm Blanco A Inverter ($749.999, carousel con link) y explicó por qué: motor Inverter eficiente y silencioso, 1000 rpm para mejor centrifugado, eficiencia energética A, pensado para uso diario. Cumple el requisito de recomendar y explicar. Observaciones (no bloquean OK): (a) contradicción entre el primer turno (sin lavarropas) y el segundo (sí hay Drean); (b) el bot describe la capacidad de 6kg como 'ideal para familias pequeñas' y aclara que 'podría quedarte justo' para 4 personas, sin justificar más; (c) no confirmó que el modelo sea de carga frontal, que el cliente pidió explícitamente.",
+      "conversationUuid": "0f512e28-884f-4202-b22a-c1022c428f25",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial exacto del test; respuestas del cliente según instrucciones (lavado casi todos los días, carga frontal, presupuesto medio, pidió cuál conviene más). No se compró.",
+      "transcripcion": [
+        "user: necesito un lavarropas para una familia de 4, cuál me recomendás?",
+        "bot: ¡Claro! En este momento no tengo lavarropas para ofrecerte. Como alternativas cercanas, tenemos productos de Dormitorio y Comedor. ¿Te ayudo con otro producto?",
+        "user: Ah, qué pena. Lavamos casi todos los días, preferimos carga frontal y el presupuesto es medio. ¿Hay algún otro modelo o alternativa que me convenga más para lavar la ropa de una familia de 4? ¿Cuál me recomendarías y por qué?",
+        "bot: Para lavar casi todos los días, el Drean de 6 kg con motor Inverter y 1000 rpm puede ser una opción práctica y eficiente. Su capacidad está descrita como ideal para familias pequeñas, así que podría quedarte justo para una familia de 4. El precio actual es **$749.999**.",
+        "bot: [carousel de producto: Lavarropas Drean 6kg Lcfdr0610lb1 1000rpm Blanco A Inverter, $749999, https://www.naldo.com.ar/6kg-lcfdr0610lb1-1000rpm-blanco-a-inv-209351/p]",
+        "bot: ¿Te sirve este o buscás otra cosa?"
+      ]
+    },
+    {
+      "test": "T-003",
+      "nombre": "Pedir una recomendación de producto",
+      "requisitos": [
+        "Configuración Global › Recomendación de Producto (productRecommendation)"
+      ],
+      "tags": [
+        "recomendación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito (Recomendación de Producto, productRecommendation, flujo nativo ACTIVADO): el bot recomendó un producto acorde a la necesidad y explicó por qué. Tras el primer turno (\"no tenemos lavarropas\"), el cliente simulado aclaró carga frontal, lavado casi diario y presupuesto medio; el bot mostró el carrusel con el Lavarropas Ecoinverter 8 Kg 1400 RPM Drean (carga frontal, 8 kg, precio $879.995) y, al preguntarle por qué, explicó que es de carga frontal, tiene 8 kg de capacidad para una familia de cuatro que lava seguido y centrifuga hasta 1400 RPM. Observación: hay inconsistencia interna: el primer turno y un mensaje posterior dicen que no hay lavarropas que cumplan todas las características (y mencionan un BGH 8 kg que no aparece en el carrusel), mientras que el carrusel sí muestra un producto que las cumple; el bot también afirma no tener lavarropas al inicio y luego recomienda uno.",
+      "conversationUuid": "a23e26ea-4ed8-4cce-85a8-c5e71858cce3",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos requeridos. Cliente: familia de 4, lavan casi todos los días, prefiere carga frontal, presupuesto medio. Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15. 4 mensajes del cliente.",
+      "transcripcion": [
+        "user: necesito un lavarropas para una familia de 4, cuál me recomendás?",
+        "bot: En este momento no tenemos lavarropas. Como alternativas cercanas, contamos con productos para el dormitorio y el comedor. ¿Te ayudo con otro producto?",
+        "user: Ah, qué pena. Lavamos casi todos los días, preferimos carga frontal y el presupuesto es medio. Hay algún otro lavarropas o algo para lavar la ropa que me puedas recomendar? Cuál me conviene más?",
+        "bot: [carrusel de producto] 1. Lavarropas Ecoinverter 8 Kg 1400 RPM Gris Drean LCFDR0814SG0 - $879995.12 (32% OFF, precio de lista $1299998.70). Lavarropas de carga frontal, 8 Kg, centrifugado regulable hasta 1400 RPM, eficiencia A, 13 programas.",
+        "bot: En este momento no tenemos un lavarropas que confirme todas esas características, pero tenemos estas alternativas de gama media. Para lavar seguido y una familia de cuatro, te conviene priorizar una capacidad de 8 kg y carga frontal; el BGH de 8 kg es una opción a considerar por su capacidad. También te muestro otros modelos con distintas capacidades para comparar. ¿Te sirve este o buscás otra cosa?",
+        "user: Ese me sirve. Por qué me recomendás justamente ese lavarropas?",
+        "bot: Te recomendé ese porque es de carga frontal, tiene 8 kg de capacidad y centrifuga hasta 1400 RPM; eso coincide con lo que preferís y con la capacidad que estábamos priorizando para una familia de cuatro que lava seguido. Además, tiene 13 programas y la velocidad de centrifugado es regulable. Su precio final es $879.995."
+      ]
+    },
+    {
+      "test": "T-003",
+      "nombre": "Pedir una recomendación de producto",
+      "requisitos": [
+        "Configuración Global › Recomendación de Producto (productRecommendation)"
+      ],
+      "tags": [
+        "recomendación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito 'Recomendación de Producto (productRecommendation)' ACTIVADO: el bot recomienda productos acordes a la necesidad y explica por qué. En el 2do turno, tras la aclaración del cliente (lavan casi todos los días, carga frontal, presupuesto medio), el bot recomendó lavarropas de carga frontal de 8 kg o más para una familia de 4 que lava a diario, explicó por qué (capacidad, 1400 rpm, Inverter, eficiencia A+++, 10,5 kg para lavar más ropa por tanda) y presentó un carrusel con 5 productos. Observación: en el 1er turno el bot dijo 'no tengo lavarropas para ofrecerte' y sugirió otras categorías; un guardrail (knowledge_grounding) reescribió esa respuesta porque la búsqueda sólo devolvió una carpa. Ese 1er turno tardó ~180 s y terminó en completion 'timeout' aunque la respuesta sí apareció. El catálogo sí tiene lavarropas, así que la negativa inicial es un falso negativo del bot. Se evalúa OK porque el objetivo se cumplió en la conversación; el falso negativo y el timeout quedan como hallazgos a revisar.",
+      "conversationUuid": "7687665b-7548-43f9-ae8a-96c77cd4c398",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos requeridos. Mensaje inicial: 'necesito un lavarropas para una familia de 4, cuál me recomendás?'. Turno 2 del cliente: 'Lavamos casi todos los días. Prefiero carga frontal y el presupuesto es medio. ¿Cuál de las opciones te parece que conviene más?'. Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15. Conversación marcada isTesting; terminada con mcp_end_conversation (no archivada) y sesión liberada.",
+      "transcripcion": [
+        "user: necesito un lavarropas para una familia de 4, cuál me recomendás?",
+        "bot: En este momento no tengo lavarropas para ofrecerte. Podés explorar estas categorías: Aberturas, Blanquería y Almohadas, Accesorios, Juguetes, Parlantes, Dormitorio, Comedor y Celulares.\n\n¿Te ayudo con otro producto?",
+        "user: Lavamos casi todos los días. Prefiero carga frontal y el presupuesto es medio. ¿Cuál de las opciones te parece que conviene más?",
+        "bot: En este momento no tenemos un lavarropas que coincida con todo lo que pedís, pero tenemos estas alternativas de carga frontal. Para una familia de 4 que lava casi todos los días, te recomendaría priorizar los modelos de 8 kg o más; el BGH de 8 kg ofrece 1400 rpm y tecnología Inverter, y el Midea de 10,5 kg permite lavar más ropa por tanda. ¿Te sirve este o buscás otra cosa?"
+      ]
+    },
+    {
+      "test": "T-004",
+      "nombre": "Comprar un producto y recibir el link de pago sin dar datos",
+      "requisitos": [
+        "Configuración Global › Comenzar checkout (generateCheckout)"
+      ],
+      "tags": [
+        "checkout"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito 'Comenzar checkout (generateCheckout)' / 'Valor configurado: No solicita datos ... Alcanza con compartir el link de compra'. El bot mostró carrusel de Smart TV de 50 pulgadas, el tester eligió el primero (Samsung 50 M60hagxzb Mini Led Fhd, $699999) y pidió el link para pagar. El bot respondió que lo agregó al carrito y compartió el link de compra https://snpy.ar/u8pdef, sin pedir nombre, apellido, email, dirección ni otros datos personales. Objetivo cumplido. Observaciones no bloqueantes: el primer turno terminó con completion 'timeout' (180 s) aunque sí llegaron outputs del bot; el segundo turno generó 2 engine turns (warning del send), se reportaron resultados del primero y el link llegó en ese primer turno.",
+      "conversationUuid": "3c1f7456-c715-4f6d-b1bb-553662b553d6",
+      "datosCambiados": false,
+      "datosUsados": "Ningún dato personal. Producto elegido: Smart TV Samsung 50 M60hagxzb Mini Led Fhd (primero del carrusel de 50 pulgadas). No se dieron nombre, apellido, email ni dirección.",
+      "transcripcion": [
+        "user: quiero comprar un smart tv de 50 pulgadas, cómo hago?",
+        "bot: ¡Qué bueno! Tenemos estas opciones de Smart TV de 50 pulgadas; podés elegir una y seguir el enlace para comprarla.",
+        "bot: [carrusel de 5 Smart TV de 50 pulgadas: Samsung 50 M60hagxzb Mini Led Fhd $699999, TCL 50 50s5k $749999, AOC 50 U7345/77i $599999, Hisense 50 9150Q6N $719999, Hisense 50 A64N $669999]",
+        "bot: Tenemos estas opciones de Smart TV de 50 pulgadas, con sus precios en el carrusel. Elegí una y podés continuar desde su enlace de compra.\n\n¿Te sirve este o buscás otra cosa?",
+        "user: Quiero el primero: el Samsung 50 M60hagxzb. Pasame el link para pagar, por favor.",
+        "bot: [carrusel de barras de sonido: Stromberg Stage, Sony HT-S100F, LG S40Q]",
+        "bot: Agregué el Smart TV Samsung 50 M60hagxzb Mini Led Fhd a tu carrito. Podés finalizar la compra acá: https://snpy.ar/u8pdef\n\nTambién te muestro algunas barras de sonido que complementan el televisor."
+      ]
+    },
+    {
+      "test": "T-004",
+      "nombre": "Comprar un producto y recibir el link de pago sin dar datos",
+      "requisitos": [
+        "Configuración Global › Comenzar checkout (generateCheckout)"
+      ],
+      "tags": [
+        "checkout"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito 'Comenzar checkout (generateCheckout)' / 'Valor configurado: No solicita datos: no pide nombre, apellido, email ni dirección de envío. Alcanza con compartir el link de compra'. El bot mostró el carrusel de smart TVs de 50 pulgadas, el cliente eligió el primero con stock (Smart TV Samsung 50 M60hagxzb Mini Led Fhd) y pidió el link para pagar. El bot agregó el producto al carrito y compartió el link de compra https://snpy.ar/ne9624 sin pedir nombre, apellido, email ni dirección de envío (ningún mensaje del bot solicita datos personales). Objetivo cumplido. Nota: el primer turno terminó con completion 'timeout' (180s) aunque el bot respondió con outputs; el segundo turno terminó con turn.end. El send produjo 2 engine turns; se reporta el primero según la herramienta.",
+      "conversationUuid": "edfb3ad9-aa9e-4a05-8ba5-ad38b2530735",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos personales. Producto elegido: Smart TV Samsung 50 M60hagxzb Mini Led Fhd (id 51053, precio $699999), el primero de 50 pulgadas del carrusel con stock. El cliente no dio datos y no completó el pago.",
+      "transcripcion": [
+        "user: quiero comprar un smart tv de 50 pulgadas, cómo hago?",
+        "bot: ¡Qué bueno! \n\nPara comprar, elegí el modelo que te guste y te ayudo a agregarlo al carrito. ¿Te sirve este o buscás otra cosa?",
+        "bot: [carrusel de productos: Smart TV Samsung 50 M60hagxzb Mini Led Fhd $699999; Smart Tv TCL 50 50s5k $749999; Smart Tv AOC 50 U7345/77i $599999; Smart Tv Hisense 50 9150q6n $719999; Smart Tv Hisense 50 A64n $669999]",
+        "user: Quiero el primero: el Smart TV Samsung 50 M60hagxzb. Pasame el link para pagar, por favor.",
+        "bot: [carrusel de complementos: Barra de sonido Stromberg Stage; Barra de sonido Sony HT-S100F; Barra de sonido LG S40Q]",
+        "bot: ¡Listo! Agregué el Smart TV Samsung 50 M60hagxzb Mini Led Fhd a tu carrito.\n\nPodés finalizar la compra en este link: https://snpy.ar/ne9624\n\n¿Buscamos algo más o te ayudo con otra cosa? También te muestro algunos complementos para el TV."
+      ]
+    },
+    {
+      "test": "T-004",
+      "nombre": "Comprar un producto y recibir el link de pago sin dar datos",
+      "requisitos": [
+        "Configuración Global › Comenzar checkout (generateCheckout)"
+      ],
+      "tags": [
+        "checkout"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El bot mostró opciones de Smart TV de 50 pulgadas, el cliente eligió el primero con stock (Samsung 50 M60HAGXZB, $699999) y pidió el link para pagar. El bot respondió con el link de compra (https://snpy.ar/bgucav) y agregó el producto al carrito sin pedir nombre, apellido, email ni dirección de envío, cumpliendo 'No solicita datos... Alcanza con compartir el link de compra (del carrito o generado)'. Nota: el primer turno terminó en completion 'timeout' (outputs recibidos igual); el segundo turno terminó con turn.end. La respuesta del bot incluyó además un carrusel de barras de sonido como cross-selling, sin pedir datos.",
+      "conversationUuid": "4a05e308-d2b6-4407-b693-24d10708454d",
+      "datosCambiados": false,
+      "datosUsados": "Producto: Smart TV Samsung 50 M60HAGXZB (primer 50 pulgadas mostrado por el bot). Sin datos personales.",
+      "transcripcion": [
+        "user: quiero comprar un smart tv de 50 pulgadas, cómo hago?",
+        "bot: ¡Qué bueno! Tenemos estas opciones de Smart TV de 50 pulgadas, con sus precios:",
+        "bot: [carrusel de productos: Samsung 50 M60HAGXZB $699999, TCL 50S5K $749999, AOC 50 U7345/77i $599999, Hisense 9150Q6N $719999, Hisense 50 A64N $669999]",
+        "bot: ¿Te sirve este o buscás otra cosa?",
+        "user: Quiero el primero, el Samsung 50 M60HAGXZB. Pasame el link para pagar.",
+        "bot: Agregué el Smart TV Samsung 50 M60HAGXZB a tu carrito. Podés finalizar la compra en este link: https://snpy.ar/bgucav\n\nTambién te muestro algunas barras de sonido que complementan lo que agregaste.",
+        "bot: [carrusel de barras de sonido: Stromberg Stage, Sony HT-S100F, LG S40Q]"
+      ]
+    },
+    {
+      "test": "T-005",
+      "nombre": "Consultar promociones vigentes",
+      "requisitos": [
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "promociones"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito: si no hay una promocion vigente informada, aclarar que hay productos con promociones incluidas en su precio y ofrecer la ayuda de una persona del equipo. El bot no inventó descuentos y no ofreció promociones fuera de Conocimientos (cumple la parte de responder solo con la info cargada, derivando a naldo.com.ar). Cuando el cliente pidió promociones, el bot dijo 'No puedo confirmar...' y recién en el 4to turno aclaró que 'algunas promociones pueden estar incluidas directamente en el precio de ciertos productos', pero en ningún turno ofreció por iniciativa propia la ayuda de una persona del equipo: solo activó la derivación cuando el cliente la pidió explícitamente, y en ese momento respondió que no había agentes disponibles (volvían el lunes a las 00:00) y pidió el DNI para abrir un reclamo. Además, el primer turno termino en completion 'timeout' (180 s) aunque el bot respondió; mcp_get_trace no devolvió eventos para esa sesion. Por el requisito de ofrecer ayuda de una persona sin que el cliente lo pida, se evalua como ERROR.",
+      "conversationUuid": "980713a9-f646-49a5-b70d-3ad92b98ba3c",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos (requiere datos específicos: false). Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15. No se proporcionó DNI.",
+      "transcripcion": [
+        "user: qué promociones tienen ahora?",
+        "bot: ¡Podés consultar nuestras ofertas actuales en [naldo.com.ar](https://www.naldo.com.ar/)! No puedo confirmar desde acá los términos de cada promoción; en la web vas a encontrar la información vigente.",
+        "user: Y esas promociones aplican a electrodomésticos?",
+        "bot: No puedo confirmar si las ofertas actuales aplican a todos los electrodomésticos; las condiciones pueden variar según el producto. Podés revisar las ofertas vigentes en [naldo.com.ar](https://www.naldo.com.ar/).",
+        "user: Entonces no tenés ninguna promo vigente para mostrarme?",
+        "bot: No tengo una consulta que confirme promociones vigentes específicas para mostrarte. Podés ver las ofertas actuales en [naldo.com.ar](https://www.naldo.com.ar/); algunas promociones pueden estar incluidas directamente en el precio de ciertos productos.",
+        "user: Ok, me podés ayudar alguien del equipo para saber qué promos tienen en electrodomésticos?",
+        "bot: En este momento no tengo agentes disponibles para atenderte para ofrecerte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Dale, está bien, espero a que me atienda alguien del equipo. Gracias, chau.",
+        "bot: Entendido. Queda pendiente tu número de DNI para abrir el reclamo y dejar la consulta registrada. Si querés que lo gestione, pasámelo solo con números y sin puntos."
+      ]
+    },
+    {
+      "test": "T-005",
+      "nombre": "Consultar promociones vigentes",
+      "requisitos": [
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "promociones"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito: si no hay promoción vigente informada, el bot debe aclarar que hay productos con la promoción incluida en el precio Y ofrecer la ayuda de una persona del equipo. En el turno en que el bot dijo no tener promoción vigente para heladeras (\"No tengo confirmada una promoción vigente específica para heladeras. Sí aparecen descuentos ya reflejados en el precio de algunos modelos\") sí cumplió la primera parte, pero no ofreció la ayuda de una persona: respondió \"¿Te ayudo con otro producto?\". La ayuda humana apareció recién cuando el cliente la pidió explícitamente (\"Hay alguna persona del equipo que me pueda confirmar...\"), y entonces el bot respondió que no había agentes disponibles y pidió el DNI. Además, para la consulta de heladera el bot usó catalog_search y display_product_carousel y citó un 29% de descuento y precios de catálogo, mientras que el flujo indica responder solo con Conocimientos (no hay consulta por herramienta). La primera respuesta (\"Podés consultar nuestras ofertas en naldo.com.ar\") remitió a la web sin aclarar que no había promoción vigente informada.",
+      "conversationUuid": "6dc6d483-4565-46fb-bd55-2a4d61d66eff",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos (test no requiere datos). Cliente: consultas genéricas de promociones, luego preguntó por electrodomésticos y por una heladera, y pidió hablar con una persona. No se aceptó la derivación ni se cerró la conversación con DNI porque el bot pidió DNI y las instrucciones no proveían uno; se terminó con mcp_end_conversation.",
+      "transcripcion": [
+        "user: qué promociones tienen ahora?",
+        "bot: ¡Podés consultar nuestras ofertas en naldo.com.ar (https://www.naldo.com.ar/). En la web también está la información sobre medios de pago y promociones bancarias.",
+        "user: Y esas promociones aplican a electrodomésticos?",
+        "bot: No puedo confirmar si las promociones actuales aplican a todos los electrodomésticos; depende de cada oferta. Podés revisar las condiciones en naldo.com.ar (https://www.naldo.com.ar/).",
+        "user: Entonces no hay ninguna promo vigente informada? Quiero saber cuál aplica para una heladera.",
+        "bot: No tengo confirmada una promoción vigente específica para heladeras. Sí aparecen descuentos ya reflejados en el precio de algunos modelos; te muestro una opción:",
+        "bot: ¿Te ayudo con otro producto?",
+        "bot: [carrusel de producto] 1. Heladera Electrolux No Frost Bottom Freezer 400 Litros. IB6S - $1449999.00 (29% OFF, precio de lista $2033332.00)",
+        "user: No me queda claro qué promo tiene ese modelo. Me podés decir cuál es exactamente?",
+        "bot: Ese modelo figura con un precio promocional de $1.449.999, frente a un precio de lista de $2.033.332 (29% de descuento). No tengo información confirmada sobre condiciones adicionales de esa promoción.",
+        "user: Hay alguna persona del equipo que me pueda confirmar las condiciones de esa promo?",
+        "bot: En este momento no hay agentes disponibles para atenderte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456)."
+      ]
+    },
+    {
+      "test": "T-005",
+      "nombre": "Consultar promociones vigentes",
+      "requisitos": [
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "promociones"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito: si no hay una promocion vigente informada, el bot debe aclarar que hay productos con la promocion incluida en el precio y ofrecer la ayuda de una persona del equipo. El bot no cumplio la parte de ofrecer ayuda de una persona: en los 4 primeros turnos (promociones, electrodomesticos, heladera) nunca ofrecio hablar con una persona del equipo; derivo al equipo solo cuando el cliente lo pidio explicitamente en el turno 5, y entonces respondio que no hay agentes disponibles hasta el lunes 00:00 y pidio DNI. La aclaracion sobre productos con promocion incluida en el precio aparecio recien en el turno 4 y de forma parcial. Como parte positiva, el bot no invento descuentos ni promociones concretas y remitio a naldo.com.ar, pero no informo explicitamente que no hay promocion vigente cargada en Conocimientos.",
+      "conversationUuid": "aee4245e-8f73-40aa-90b5-4238e73d2bd6",
+      "datosCambiados": false,
+      "datosUsados": "Bot 0c73d3f4-7133-41f6-992b-67c0b50e3d15 (sin datos especificos, requiere datos especificos: false). Conversacion de prueba creada y cerrada con mcp_end_conversation (no archivada).",
+      "transcripcion": [
+        "user: qué promociones tienen ahora?",
+        "bot: ¡Tenemos las ofertas publicadas en naldo.com.ar (https://www.naldo.com.ar/). Para conocer las promociones y sus condiciones vigentes, consultá también la sección de medios de pago y promociones en nuestra web.",
+        "user: Y esas promociones aplican a electrodomésticos?",
+        "bot: No puedo confirmar desde acá si las promociones vigentes aplican a todos los electrodomésticos; las condiciones dependen de cada oferta. Podés revisar el detalle en naldo.com.ar (https://www.naldo.com.ar/).",
+        "user: Entonces, qué promo vigente tengo para un electrodoméstico? Me podés decir cuál es?",
+        "bot: No puedo confirmarte una promoción vigente específica para electrodomésticos. En nuestra web podés revisar las ofertas (https://www.naldo.com.ar/) y sus condiciones; también hay productos que ya incluyen promociones en su precio.",
+        "user: Ok, quiero confirmar si hay alguna promo para una heladera. Cómo hago?",
+        "bot: [carrusel de 5 heladeras con precios y descuentos]",
+        "bot: ¡Podés revisar las ofertas y las condiciones en naldo.com.ar (https://www.naldo.com.ar/); no puedo confirmar desde acá cuál promoción vigente aplica a cada heladera. Tenemos estas opciones disponibles: ¿Te sirve este o buscás otra cosa?",
+        "user: No me queda claro. Puedo hablar con alguien del equipo para que me confirme qué promo aplica?",
+        "bot: En este momento no hay agentes disponibles para atenderte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Ok, gracias. Lo dejo para otro momento, chau.",
+        "bot: ¡Dale, chau! Cuando quieras retomarlo, escribinos."
+      ]
+    },
+    {
+      "test": "T-006",
+      "nombre": "Preguntar por un descuento con tarjeta que puede no existir",
+      "requisitos": [
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "promociones"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito de Configuración Global › Promociones (flujo nativo, ACTIVADO): si no hay una promoción vigente informada en Conocimientos, el bot debe aclarar que hay productos con promociones incluidas en su precio y ofrecer la ayuda de una persona del equipo. El bot cumplió la mitad: no inventó promociones ni cuotas (respondió 'No puedo confirmar ese descuento, promoción o condición de financiación en este momento') y ofreció conectar con alguien del equipo. Pero no aclaró que hay productos con promociones incluidas en su precio, así que el requisito no se cumple completo. Además, al aceptar la derivación el bot respondió que no hay agentes disponibles hasta el lunes a las 00:00 y siguió pidiendo DNI y email; el cliente cerró la conversación, pero el bot no la cerró por sí mismo. El turno de la primera consulta terminó por timeout (180 s) aunque el bot sí respondió.",
+      "conversationUuid": "7ac08a91-c0da-4c83-b358-f842756c28cb",
+      "datosCambiados": false,
+      "datosUsados": "Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15 (no requiere datos específicos). Cliente que quiere pagar en cuotas; no se dio información de promos al bot.",
+      "transcripcion": [
+        "user: hay descuento pagando con tarjeta de crédito? o cuotas sin interés?",
+        "bot: No puedo confirmar ese descuento, promoción o condición de financiación en este momento. Puedo consultarlo o conectarte con alguien que te ayude.",
+        "user: Sí, dale, conectame con alguien del equipo. Gracias.",
+        "bot: En este momento no hay agentes disponibles para atenderte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Ok, gracias, lo dejo para otro momento. Chau.",
+        "bot: Para poder darte seguimiento necesito tu email. ¿Me lo pasás?"
+      ]
+    },
+    {
+      "test": "T-006",
+      "nombre": "Preguntar por un descuento con tarjeta que puede no existir",
+      "requisitos": [
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "promociones"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito de Configuración Global › Promociones (flujo nativo: Promociones, ACTIVADO): si no hay una promoción vigente informada en Conocimientos, el bot debe (a) aclarar que hay productos con promociones incluidas en su precio y (b) ofrecer la ayuda de una persona del equipo. El bot cumplió (b): ofreció conectar con alguien ('Puedo consultarlo o conectarte con alguien que te ayude') y luego intentó el handoff, que no tuvo agentes disponibles. No cumplió (a): en ningún turno aclaró que hay productos con promociones incluidas en el precio; sus respuestas fueron solo 'podés consultar ... en nuestra web' y 'No puedo confirmar ese descuento, promoción o condición de financiación'. Sí cumplió el objetivo de no inventar promociones ni cuotas: no mencionó bancos, cuotas ni porcentajes. Nota: el primer envío de 'y con qué bancos aplica?' devolvió upstream-error 502 de lapi (no llegó al historial) y se reenvió con éxito; el turno del handoff tuvo una reescritura por guardrail (knowledge_grounding) del mensaje de DNI.",
+      "conversationUuid": "1a41508e-3385-4c88-b3a8-d5168627fa43",
+      "datosCambiados": false,
+      "datosUsados": "Ninguno: el test no requiere datos específicos (Requiere datos específicos: false). Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15.",
+      "transcripcion": [
+        "user: hay descuento pagando con tarjeta de crédito? o cuotas sin interés?",
+        "bot: ¡Podés consultar los medios de pago, cuotas y promociones vigentes en nuestra web: https://www.naldo.com.ar/. No puedo confirmarte desde acá si hay un descuento o cuotas sin interés disponibles ahora.",
+        "user: y con qué bancos aplica?",
+        "bot: En nuestra web podés consultar los bancos y las promociones vigentes para cada medio de pago: https://www.naldo.com.ar/. No puedo confirmarte desde acá qué bancos aplican actualmente.",
+        "user: entonces no tenés info de las promos? necesito saber si puedo pagar en cuotas",
+        "bot: No puedo confirmar ese descuento, promoción o condición de financiación en este momento. Puedo consultarlo o conectarte con alguien que te ayude.",
+        "user: sí, dale, conectame con alguien. gracias",
+        "bot: En este momento no tengo agentes disponibles para atenderte para ofrecerte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: bueno, lo dejo para más tarde. gracias, chau",
+        "bot: Entendido, lo dejamos para más tarde. Si querés retomar el pedido, pasame tu DNI solo con números y sin puntos."
+      ]
+    },
+    {
+      "test": "T-006",
+      "nombre": "Preguntar por un descuento con tarjeta que puede no existir",
+      "requisitos": [
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "promociones"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El objetivo se cumplió: el bot no inventó promociones ni cuotas y ofreció ayuda de una persona del equipo. Pero el requisito de Promociones pide que, si no hay promoción vigente informada, el bot 'aclare que hay productos con promociones incluidas en su precio y ofrezca la ayuda de una persona del equipo'. La respuesta del bot ('No puedo confirmar ese descuento, promoción o condición de financiación en este momento. Puedo consultarlo o conectarte con alguien que te ayude.') ofrece la persona, pero no aclara que hay productos con promociones incluidas en el precio. Falta esa parte del requisito. Además, el guardrail knowledge_grounding reescribió la respuesta del bot en el turno del pedido de agente, por falta de sustento en los datos del requisito de DNI.",
+      "conversationUuid": "15d0cc93-3fec-4739-856d-7ebef151bb42",
+      "datosCambiados": false,
+      "datosUsados": "Ninguno (el test no requiere datos específicos). Cliente con la consulta de descuento con tarjeta de crédito o cuotas sin interés.",
+      "transcripcion": [
+        "user: hay descuento pagando con tarjeta de crédito? o cuotas sin interés?",
+        "bot: No puedo confirmar ese descuento, promoción o condición de financiación en este momento. Puedo consultarlo o conectarte con alguien que te ayude.",
+        "user: Sí, por favor, conectame con alguien del equipo. Gracias.",
+        "bot: En este momento no tengo agentes disponibles para atenderte para ofrecerte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Dale, gracias. Lo consulto más tarde.",
+        "bot: Dale, cuando quieras retomamos. Para dejar abierto el reclamo, necesito tu número de DNI, solo con números y sin puntos."
+      ]
+    },
+    {
+      "test": "T-007",
+      "nombre": "Consulta de compra mayorista",
+      "requisitos": [
+        "Flujos de Pre-Venta › mayorista"
+      ],
+      "tags": [
+        "mayorista"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Cumplimiento parcial. Cumple: (1) deriva al sector sales (el trace muestra la llamada assignSector con sector sales); (2) pide Producto y Cantidad correctamente (preguntó por colchones de 2 plazas y luego por la cantidad). No cumple: (2) el ticket con motivo wholeSale NO se generó: el paso ticket_create (category wholeSale) del flujo mayorista está después de los pasos de recolección de contacto, y el bot quedó trabado pidiendo email y luego DNI, aunque el cliente dijo varias veces que prefería que lo contactaran por este chat; nunca aceptó ese camino. (3) No envió la encuesta de satisfacción: la conversación no llegó al cierre dentro de los 8 mensajes del cliente. Los datos de las instrucciones eran válidos; el fallo es de comportamiento del bot.",
+      "conversationUuid": "9d15c853-c14c-405d-9761-a6282d230b6e",
+      "datosCambiados": false,
+      "datosUsados": "nombre: Juan Pérez (inventado, las instrucciones no lo fijaban); producto: colchones de 2 plazas; cantidad: 20 unidades; contacto: el cliente pidió contacto por este chat y se negó a dar email; luego respondió DNI 12345678 (inventado, no estaba en las instrucciones, a pedido del bot).",
+      "transcripcion": [
+        "user: quiero hacer una compra mayorista",
+        "bot: Para armar tu cotización mayorista necesito algunos datos. ¿Cuál es tu nombre y apellido?",
+        "user: Juan Pérez",
+        "bot: ¿Qué producto específico te interesa, o qué variedad de productos necesitás para que armemos un catálogo?",
+        "user: colchones de 2 plazas",
+        "bot: ¿Qué cantidad de unidades necesitás? Indicame un número entero mayor a 0 (por ejemplo 50).",
+        "user: 20 unidades",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: Preferiría que me contacten por este mismo chat, no necesito dar email.",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?",
+        "user: Prefiero que me contacten por este mismo chat, no tengo email para pasar.",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?",
+        "user: No tengo email. Prefiero que me contacten por este chat.",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: 12345678. Y como dije, prefiero que me contacten por este mismo chat.",
+        "bot: Para poder darte seguimiento necesito tu email. ¿Me lo pasás?",
+        "user: No tengo email, no lo voy a pasar. Contactenme por este chat, por favor.",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?"
+      ]
+    },
+    {
+      "test": "T-007",
+      "nombre": "Consulta de compra mayorista",
+      "requisitos": [
+        "Flujos de Pre-Venta › mayorista"
+      ],
+      "tags": [
+        "mayorista"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El flujo mayorista pide producto y cantidad correctamente (requisito 2, parte de datos) y deriva al sector sales (requisito 1: el flujo ejecuta el paso sector=sales y la conversacion queda en group sales). Pero no cumple el requisito 2 ni el 3: antes de generar el ticket (paso 'assistance', ticket_create con category wholeSale) el bot exige datos de contacto obligatorios: primero pide nombre y apellido, luego email (rechaza 'no quiero dar el email' y otras respuestas que no son email), y luego DNI por una ruta de preguntas de contacto (contact_q_sap.Documento_identidad), que sigue sin resolverse tras 8 mensajes del cliente. El requisito de que el bot genere el ticket con motivo wholeSale nunca se alcanzo (el trace no registra ningun tool de ticket) y tampoco se envio la encuesta de satisfaccion (conversation.satisfactionSurveySent = null). Las instrucciones del cliente indicaban que, si pedia datos de contacto, se prefiriera contacto por el mismo chat; el bot no ofrece esa alternativa y no avanza sin esos datos. Nota: el trace muestra dos turnos del engine por un mismo envio (warning de la tool), se reportan solo los del primer turno.",
+      "conversationUuid": "10a4685e-7961-4bdb-88a9-ca7025576d73",
+      "datosCambiados": false,
+      "datosUsados": "nombre: Juan Pérez; rubro: dueño de un hotel chico; producto: colchones de 2 plazas; cantidad: 20 unidades; contacto: se negó a dar email y se pidió contacto por el mismo chat (no se dieron datos de contacto ni DNI). Sin datos específicos requeridos.",
+      "transcripcion": [
+        "user: quiero hacer una compra mayorista",
+        "bot: Para armar tu cotización mayorista necesito algunos datos. ¿Cuál es tu nombre y apellido?",
+        "user: Juan Pérez, soy dueño de un hotel chico.",
+        "bot: ¿Qué producto específico te interesa, o qué variedad de productos necesitás para que armemos un catálogo?",
+        "user: Colchones de 2 plazas.",
+        "bot: ¿Qué cantidad de unidades necesitás? Indicame un número entero mayor a 0 (por ejemplo 50).",
+        "user: 20 unidades.",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: Preferiría que me contacten por este mismo chat, no necesito dejar email.",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?",
+        "user: Prefiero que me contacten por este mismo chat, no tengo un email para darles ahora.",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?",
+        "user: No quiero dar el email. Contactenme por este chat, por favor.",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Prefiero que me contacten por este mismo chat, no quiero pasar más datos de contacto.",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456)."
+      ]
+    },
+    {
+      "test": "T-007",
+      "nombre": "Consulta de compra mayorista",
+      "requisitos": [
+        "Flujos de Pre-Venta › mayorista"
+      ],
+      "tags": [
+        "mayorista"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito 'Flujo mayorista' (paso 2): el bot debe generar un ticket con motivo wholeSale tras pedir Producto y Cantidad. El bot pidió producto (OK) y cantidad (OK) y derivó a sector sales (OK, group 'sales' en la conversación), pero no generó el ticket ni envió la encuesta de satisfacción (paso 3). Tras la cantidad, el flujo quedó bloqueado pidiendo datos de contacto (email, luego DNI) antes de llegar al paso 'assistance' (ticket_create con category wholeSale). El cliente rechazó dar datos de contacto según sus instrucciones y pidió ser contactado por el chat; el bot no aceptó esa alternativa y repitió la solicitud de email y DNI hasta agotar el turno máximo de 8 mensajes. Los requisitos no mencionan pedir datos de contacto antes del ticket, por lo que el bloqueo no está especificado en el alcance funcional. Trace: flow 'mayorista' suspendido en contact_email con outcome 'retry' (reason 'no email address found') y luego en el paso de DNI.",
+      "conversationUuid": "7141dd8d-7e13-48ad-b736-01066a78b229",
+      "datosCambiados": false,
+      "datosUsados": "Producto: colchones de 2 plazas. Cantidad: 20 unidades. Cliente: dueño de hotel chico; no dio nombre, email ni DNI; pidió que lo contacten por este chat.",
+      "transcripcion": [
+        "user: quiero hacer una compra mayorista",
+        "bot: Para armar tu cotización mayorista necesito algunos datos. ¿Cuál es tu nombre y apellido?",
+        "user: Prefiero que me contacten por este mismo chat. ¿Podemos seguir con la consulta?",
+        "bot: ¿Qué producto específico te interesa, o qué variedad de productos necesitás para que armemos un catálogo?",
+        "user: colchones de 2 plazas",
+        "bot: ¿Qué cantidad de unidades necesitás? Indicame un número entero mayor a 0 (por ejemplo 50).",
+        "user: 20 unidades",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: Prefiero que me contacten por este mismo chat.",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?",
+        "user: No prefiero dar email, mejor que me contacten por este mismo chat. Si me siguen pidiendo el mail, ¿hay otra forma de avanzar?",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?",
+        "user: Prefiero que me contacten por este mismo chat, no les doy el email.",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Prefiero que me contacten por este mismo chat, no les paso el DNI.",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456)."
+      ]
+    },
+    {
+      "test": "T-008",
+      "nombre": "Venta a empresa con producto y cantidad en el primer mensaje",
+      "requisitos": [
+        "Flujos de Pre-Venta › mayorista"
+      ],
+      "tags": [
+        "mayorista"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El bot cumple parcialmente el requisito: el flujo mayorista se activó (topic 'Consulta venta mayorista', group 'sales'), creó el ticket #NaldoGenVI-106 y envió la encuesta de satisfacción, que respondí con 'Excelente'. Pero incumple el objetivo del test, que pide terminar en el ticket de ventas con el producto y la cantidad 'sin volver a pedir datos que el cliente ya dio': el cliente dio 'aires acondicionados' y '15' en el primer mensaje y en el segundo ('aires split de 3000 frigorías, 15 unidades'), y el bot volvió a pedir el producto específico y la cantidad (dos veces) antes de avanzar. Además pidió nombre y apellido, email y DNI, que no figuran en el alcance funcional (el requisito solo pide Producto y Cantidad).",
+      "conversationUuid": "8f966f40-c351-4780-a674-398cd23c4470",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'hacen venta a empresas? necesito 15 aires acondicionados para unas oficinas'. Producto: aires split de 3000 frigorías. Cantidad: 15 unidades. Para los datos extra que pidió el bot: email compras.test@example.com, DNI 30123456. Nombre y apellido no se dio (se respondió 'Soy el encargado de compras de la empresa'). Encuesta: 'Excelente'.",
+      "transcripcion": [
+        "user: hacen venta a empresas? necesito 15 aires acondicionados para unas oficinas",
+        "bot: Para armar tu cotización mayorista necesito algunos datos. ¿Cuál es tu nombre y apellido?",
+        "user: Soy el encargado de compras de la empresa. Ya te dije el producto y la cantidad: son aires split de 3000 frigorías, 15 unidades.",
+        "bot: ¿Qué producto específico te interesa, o qué variedad de productos necesitás para que armemos un catálogo?",
+        "user: Ya te lo dije en mi primer mensaje, pero lo repito: necesitamos aires split de 3000 frigorías, 15 unidades, para unas oficinas.",
+        "bot: ¿Qué cantidad de unidades necesitás? Indicame un número entero mayor a 0 (por ejemplo 50).",
+        "user: Ya te la di: son 15 unidades. Te repito, la cantidad es 15 aires split de 3000 frigorías.",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: compras.test@example.com",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: 30123456",
+        "bot: Se creó el ticket #NaldoGenVI-106. Te haremos seguimiento pronto. ¿Te ayudo con algo más?",
+        "user: Sí, dale. Si tenés una encuesta de satisfacción, mandamela.",
+        "bot: Te comparto la encuesta: ¿Qué te pareció mi atención? [encuesta: Excelente / Buena / Regular / Mala / Muy mala]",
+        "user: Excelente",
+        "bot: ¡Gracias por tu comentario!"
+      ]
+    },
+    {
+      "test": "T-008",
+      "nombre": "Venta a empresa con producto y cantidad en el primer mensaje",
+      "requisitos": [
+        "Flujos de Pre-Venta › mayorista"
+      ],
+      "tags": [
+        "mayorista"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Cumple parcialmente. OK en: (1) el flujo mayorista se activa con 'hacen venta a empresas?' (topic 'Consulta venta mayorista'); (2) deriva al sector sales (group 'sales'); (3) genera ticket #NaldoGenVI-107. ERROR en el objetivo: 'termine en el ticket a ventas con el producto y la cantidad, sin volver a pedir datos que el cliente ya dio'. El cliente dio producto (aires acondicionados) y cantidad (15) en el primer mensaje, y el bot volvió a pedir producto ('¿Qué producto específico te interesa...?') y cantidad ('¿Qué cantidad de unidades necesitás?'), aun después de repetirlos. ERROR en el requisito 3: 'Envía la encuesta de satisfacción (survey)'. La transcripción termina en 'Perfecto, gracias' y 'Hasta luego' sin encuesta; publicData.conversation.satisfactionSurveySent = null. Además el bot pidió email y DNI, datos no previstos por el requisito. No hay evidencia de que el ticket incluya producto y cantidad.",
+      "conversationUuid": "4abb019f-09f4-43ee-a03b-eab830eaa692",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Pérez, encargado de compras de la empresa. Producto: aires acondicionados. Cantidad: 15 (primer mensaje: 15 aires acondicionados para unas oficinas). Email: juan.perez.compras@example.com. DNI: 30123456. Detalle de 3000 frigorías no usado: el bot nunca pidió más detalles. Encuesta: no se ofreció, por lo que no se respondió. Cierre: 'No, eso es todo por ahora. Gracias.' y luego 'Gracias, hasta luego.'",
+      "transcripcion": [
+        "user: hacen venta a empresas? necesito 15 aires acondicionados para unas oficinas",
+        "bot: Para armar tu cotización mayorista necesito algunos datos. ¿Cuál es tu nombre y apellido?",
+        "user: Juan Pérez, soy el encargado de compras de la empresa.",
+        "bot: ¿Qué producto específico te interesa, o qué variedad de productos necesitás para que armemos un catálogo?",
+        "user: Ya te lo dije, necesito 15 aires acondicionados para las oficinas. Producto: aires acondicionados. Cantidad: 15.",
+        "bot: ¿Qué cantidad de unidades necesitás? Indicame un número entero mayor a 0 (por ejemplo 50).",
+        "user: 15 unidades. Ya te lo dije antes, son 15 aires acondicionados.",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: juan.perez.compras@example.com",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: 30123456",
+        "bot: Se creó el ticket #NaldoGenVI-107. Te haremos seguimiento pronto. ¿Te ayudo con algo más?",
+        "user: No, eso es todo por ahora. Gracias.",
+        "bot: ¡Perfecto, gracias! ¿Necesitás algo más?",
+        "user: Gracias, hasta luego.",
+        "bot: ¡Hasta luego, Juan! ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-008",
+      "nombre": "Venta a empresa con producto y cantidad en el primer mensaje",
+      "requisitos": [
+        "Flujos de Pre-Venta › mayorista"
+      ],
+      "tags": [
+        "mayorista"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito 1 (deriva a sales) y requisito 2 parcial: el bot activó el flujo mayorista (topic 'Consulta venta mayorista', group 'sales') y creó el ticket #NaldoGenVI-108. Pero el objetivo del test pide que el bot no vuelva a pedir datos que el cliente ya dio, y el bot volvió a pedir Producto (tras 'aires acondicionados, 15 aires' en el primer mensaje) y Cantidad (tras 'necesito 15 aires' en el primer mensaje), aunque el cliente los repitió dos veces. Requisito 3 no cumplido: el bot nunca envió la encuesta de satisfacción (conversation.publicData.conversation.satisfactionSurveySent = null); el cliente cerró con 'No, gracias' y el bot respondió 'queda en seguimiento el ticket' sin ofrecer encuesta. Además, el bot pidió nombre, email y DNI (no contemplados en el alcance), y el lead.ticketReason del publicData quedó en null, así que no se pudo confirmar desde la transcripción que el ticket tenga motivo wholeSale (solo se confirma el topic wholesale).",
+      "conversationUuid": "7994c77e-3084-4b8a-bfdd-fb7b52e48352",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'hacen venta a empresas? necesito 15 aires acondicionados para unas oficinas'. Nombre: Jonás Díaz (encargado de compras). Producto: aires acondicionados. Cantidad: 15 unidades, split de 3000 frigorías, para oficinas. Email: jonas.diaz.test@example.com. DNI: 30123456 (datos inventados para completar el flujo, no estaban en las instrucciones).",
+      "transcripcion": [
+        "user: hacen venta a empresas? necesito 15 aires acondicionados para unas oficinas",
+        "bot: Para armar tu cotización mayorista necesito algunos datos. ¿Cuál es tu nombre y apellido?",
+        "user: Soy Jonás Díaz, encargado de compras de la empresa.",
+        "bot: ¿Qué producto específico te interesa, o qué variedad de productos necesitás para que armemos un catálogo?",
+        "user: Ya te lo dije en el primer mensaje, pero lo repito: necesito aires acondicionados, 15 unidades para las oficinas. Son aires split de 3000 frigorías.",
+        "bot: ¿Qué cantidad de unidades necesitás? Indicame un número entero mayor a 0 (por ejemplo 50).",
+        "user: Ya lo dije antes, pero repito: son 15 unidades, aires split de 3000 frigorías, para las oficinas. (Y el producto, aires acondicionados.)",
+        "bot: ¿Cuál es tu email?",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "user: jonas.diaz.test@example.com",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: 30123456",
+        "bot: Se creó el ticket #NaldoGenVI-108. Te haremos seguimiento pronto. ¿Te ayudo con algo más?",
+        "user: No, gracias. Quedo a la espera del seguimiento.",
+        "bot: Perfecto, queda en seguimiento el ticket #NaldoGenVI-108. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-009",
+      "nombre": "Solicitar un crédito",
+      "requisitos": [
+        "Flujos de Pre-Venta › SolicitudDeCredito"
+      ],
+      "tags": [
+        "crédito"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito 1 (deriva al sector administration) NO cumplido: el bot nunca derivó a administración por propia iniciativa; recién al pedir explícitamente la derivación intentó request_human_agent y respondió 'En este momento no hay agentes disponibles... disponibles de nuevo el lunes a las 00:00', sin confirmar sector administration. La causa parece operativa (fuera de horario de agentes), no de lógica del bot, pero el requisito no se verificó. Requisito 2 (envía la FAQ de solicitud de crédito): OK, compartió el enlace naldo.com.ar/credito-personal y explicó que solo necesita DNI. Requisito 3 (búsqueda de sucursales): OK, ejecutó la búsqueda; como no hay sucursales cargadas en Corrientes capital, ofreció Resistencia (Chaco) y Formosa (Formosa). Sugerencia: reintentar la iteración en horario de atención de agentes para verificar la derivación.",
+      "conversationUuid": "5a0bd910-d740-4504-ad5d-eb4c3f0f78b4",
+      "datosCambiados": false,
+      "datosUsados": "Producto: heladera (compra financiada con crédito Naldo). Ubicación del cliente: Corrientes capital. Sin DNI ni otros datos personales (el bot pidió DNI al final, no se proporcionó).",
+      "transcripcion": [
+        "user: quiero sacar un crédito para comprar una heladera",
+        "bot: Para conocer los beneficios y cómo obtener tu Credi Naldo, ingresá en [este enlace](https://www.naldo.com.ar/credito-personal). ¿Querés que te muestre las sucursales?",
+        "user: Sí, mostrame las sucursales. Vivo en Corrientes capital.",
+        "bot: Busqué sucursales en Corrientes capital, pero no me aparece ninguna cargada en esa ciudad. Las más cercanas que devuelve la búsqueda son:\n\n1. **Resistencia, Chaco** — Pte. Juan Domingo Perón 146.\n2. **Formosa, Formosa** — Rivadavia 755.\n\n¿Querés que te muestre estas sucursales en el mapa?",
+        "user: ¿Qué requisitos piden para el crédito?",
+        "bot: La información publicada indica que **solo necesitás tu DNI** para usar tu Credi Naldo. Para conocer los beneficios y cómo solicitarlo, podés ingresar a [naldo.com.ar/credito-personal](https://www.naldo.com.ar/credito-personal).",
+        "user: Prefiero que me atienda alguien para tramitar el crédito. ¿Me podés derivar con administración?",
+        "bot: En este momento no hay agentes disponibles para atenderte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456)."
+      ]
+    },
+    {
+      "test": "T-009",
+      "nombre": "Solicitar un crédito",
+      "requisitos": [
+        "Flujos de Pre-Venta › SolicitudDeCredito"
+      ],
+      "tags": [
+        "crédito"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito 1 (deriva al sector administration) NO cumplido: ante pedidos explícitos del cliente ('¿me pueden derivar con alguien del sector de administración?' y 'quiero hablar con una persona del área de administración') el bot nunca derivó; sólo repitió el enlace de Credi Naldo y ofreció mostrar sucursales. Requisito 2 (enviar la FAQ de solicitud de crédito): cumplido de forma parcial/OK: en el primer turno y en el segundo el bot envió info de Credi Naldo con requisitos (ingreso mínimo $18.000, antigüedad 6 meses, tipos de empleo) y enlace a la solicitud. Requisito 3 (ejecutar búsqueda de sucursales): OK: tras indicar Corrientes capital el bot ejecutó store_locator_search y ofreció Resistencia (Chaco) y Formosa.",
+      "conversationUuid": "cb58b420-636b-49d9-acf6-8da1e4f8ac8d",
+      "datosCambiados": false,
+      "datosUsados": "Cliente: solicitud de crédito para comprar una heladera; ubicación Corrientes capital; pedido de requisitos; pedido de sucursales; pedido de derivación a administración (dos veces).",
+      "transcripcion": [
+        "user: quiero sacar un crédito para comprar una heladera",
+        "bot: Conocé los beneficios de Credi Naldo y cómo comprar online con crédito personal en [este enlace](https://www.naldo.com.ar/credito-personal). Si querés, te muestro las sucursales.",
+        "user: Sí, mostrame las sucursales. Y también, ¿qué requisitos piden para el crédito?",
+        "bot: ¡Claro! La búsqueda muestra 90 sucursales en distintas localidades. Decime en qué ciudad o zona estás y te paso las más cercanas.\n\nSobre los requisitos del crédito: la información disponible indica un ingreso mínimo mensual de $18.000 y una antigüedad laboral mínima de 6 meses. Está dirigido a personas en relación de dependencia, monotributistas, responsables inscriptos, empleados públicos y beneficiarios de cuentas de seguridad social o empresas. La aprobación y las condiciones pueden depender de la evaluación. Podés ver cómo iniciar la solicitud en [Credi Naldo](https://www.naldo.com.ar/credito-personal).",
+        "user: Estoy en Corrientes capital.",
+        "bot: La búsqueda para Corrientes capital no muestra una sucursal en la ciudad. Encontré estas dos cercanas:\n\n1. **Resistencia, Chaco** — Pte. Juan Domingo Perón 146. Tel.: 362-154271984 / 154271996 / 154272001. Horario: lunes a sábado, de 08:30 a 12:30 y de 17:00 a 21:00.\n2. **Formosa, Formosa** — Rivadavia 755. No tengo el teléfono ni el horario informados.\n\n¿Querés que te ayude con algo más?",
+        "user: Perfecto, gracias. Quiero iniciar la solicitud del crédito, ¿me pueden derivar con alguien del sector de administración?",
+        "bot: Para conocer los beneficios y cómo comprar en la web con crédito personal, ingresá a [este enlace](https://www.naldo.com.ar/credito-personal). Si querés, puedo mostrarte las sucursales.",
+        "user: No, quiero hablar con una persona del área de administración para hacer la solicitud.",
+        "bot: Conocé los beneficios y cómo comprar por la web con crédito personal en [este enlace](https://www.naldo.com.ar/credito-personal). ¿Querés que te muestre las sucursales?"
+      ]
+    },
+    {
+      "test": "T-009",
+      "nombre": "Solicitar un crédito",
+      "requisitos": [
+        "Flujos de Pre-Venta › SolicitudDeCredito"
+      ],
+      "tags": [
+        "crédito"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisitos: (1) Deriva al sector administration: el trace muestra flowcard.dispatch de SolicitudDeCredito con dimensionOverrides sector=administration. (2) Envía la FAQ de solicitud de crédito: el flujo SolicitudDeCredito ejecutó el paso knowledge 'answer' y el bot respondió con la información de Credi Naldo (condiciones de acceso y enlace https://www.naldo.com.ar/credito-personal) al consultar requisitos. (3) Ejecuta la búsqueda de sucursales: el trace muestra tool store_locator_search con city=Corrientes, y el bot finalmente ofreció sucursales (Resistencia, Chaco y Formosa, Formosa), indicando que no tenía sucursales en Corrientes capital y que no podía confirmar si en esas se gestiona el crédito. Observaciones (no cambian el resultado): el bot no ofreció sucursales de forma proactiva; primero solo ofreció mostrarlas y las listó recién al pedirlo explícitamente; el primer turno (heladera) superó el timeout de 180 s aunque devolvió respuesta, y el trace de ese turno llegó vacío.",
+      "conversationUuid": "a86f063e-d71e-49d5-9b8c-f6d15b216ba0",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial: 'quiero sacar un crédito para comprar una heladera'. Ciudad: Corrientes capital. Pedido de sucursales y requisitos del crédito. Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15.",
+      "transcripcion": [
+        "user: quiero sacar un crédito para comprar una heladera",
+        "bot: Conocé los beneficios y cómo comprar en la web con crédito personal en [este enlace](https://www.naldo.com.ar/credito-personal). Si querés, puedo mostrarte las sucursales.",
+        "user: Vivo en Corrientes capital. ¿Qué requisitos piden para el crédito?",
+        "bot: Para conocer los beneficios de Credi Naldo y saber cómo comprar online con crédito personal, ingresá a https://www.naldo.com.ar/credito-personal. ¿Querés que te muestre las sucursales?",
+        "user: Sí, mostrame las sucursales donde puedo gestionar el crédito, por favor.",
+        "bot: Conocé los beneficios de Credi Naldo y cómo comprar por la web con crédito personal en https://www.naldo.com.ar/credito-personal. ¿Querés que te muestre las sucursales?",
+        "user: Sí, quiero ver las sucursales de Corrientes capital.",
+        "bot: Busqué sucursales para Corrientes capital, pero el resultado no muestra ninguna en esa ciudad. Sí aparecen estas opciones: 1. Resistencia, Chaco — Pte. Juan Domingo Perón 146, Resistencia. Horario: lunes a sábado, de 08:30 a 12:30 y de 17:00 a 21:00. 2. Formosa, Formosa — Rivadavia 755, Formosa. No se informaron horarios. No puedo confirmar si se puede gestionar el crédito en esas sucursales. La información para solicitarlo está en Credi Naldo (https://www.naldo.com.ar/credito-personal).",
+        "user: Perfecto, gracias. Igual, ¿me podés decir qué requisitos piden para aprobar el crédito?",
+        "bot: Sí. Según la información disponible, las condiciones de acceso indican: ingreso mínimo mensual de $18.000; antigüedad laboral mínima de 6 meses; edad máxima de 80 años; cuota no mayor al 30% del ingreso; pueden solicitarlo personas en relación de dependencia, monotributistas, responsables inscriptos, empleados públicos y beneficiarios de cuentas de seguridad social o empresas. Estos son los requisitos publicados; la aprobación final depende de la evaluación del crédito. Podés consultar cómo iniciar el trámite en Credi Naldo (https://www.naldo.com.ar/credito-personal)."
+      ]
+    },
+    {
+      "test": "T-010",
+      "nombre": "Pedir una evaluación crediticia",
+      "requisitos": [
+        "Flujos de Pre-Venta › SolicitudDeCredito"
+      ],
+      "tags": [
+        "crédito"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisitos de SolicitudDeCredito: (1) deriva al sector administration: el trace del turno 1 (flowcard.dispatch con dimensionOverrides sector=administration, flow.step 'sector' con chatServer.call assignSector sector=administration) y la conversación queda con group 'administration'; (2) envía la FAQ de solicitud de crédito: flow.step 'answer' tipo knowledge con fetchFaq, y el bot respondió con el link de Credi Naldo y crédito personal (https://www.naldo.com.ar/credito-personal); (3) ejecuta la búsqueda de sucursales cargadas en Snappy: fetchBranches con address 'Resistencia, Chaco' en el turno 2, y el bot devolvió la sucursal de Resistencia. Flujo SolicitudDeCredito disparado con confidence 1 en el primer mensaje, sin errores de turno. Nota: el primer send de mensaje quedó en completion 'timeout' (180 s) aunque el bot sí respondió; el segundo turno generó un turno adicional del engine (warning de 2 turnos), pero la respuesta reportada es la del primer turno, que cumple los requisitos. El bot pidió la ubicación y se respondió con Resistencia, Chaco, según instrucciones.",
+      "conversationUuid": "7c8b3a63-a822-4c58-a3ce-c2b1d0b1254c",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial: 'me pueden hacer una evaluación crediticia?'. Ubicación pedida por el bot: Resistencia, Chaco. No se dieron documento ni datos personales.",
+      "transcripcion": [
+        "user: me pueden hacer una evaluación crediticia?",
+        "bot: Para conocer los beneficios de Credi Naldo y cómo comprar online con crédito personal, ingresá en https://www.naldo.com.ar/credito-personal. ¿Querés que te muestre las sucursales?",
+        "user: Sí, mostrame las sucursales. Estoy en Resistencia, Chaco.",
+        "bot: ¡Claro! Encontré esta sucursal en Resistencia:\n\n**Resistencia, Chaco** — Pte. Juan Domingo Perón 146.  \nTeléfono: 362-154271984 / 154271996 / 154272001.  \nHorario: lunes a sábado, de 08:30 a 12:30 y de 17:00 a 21:00."
+      ]
+    },
+    {
+      "test": "T-010",
+      "nombre": "Pedir una evaluación crediticia",
+      "requisitos": [
+        "Flujos de Pre-Venta › SolicitudDeCredito"
+      ],
+      "tags": [
+        "crédito"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito: el pedido de evaluación crediticia activa SolicitudDeCredito con 1) derivación al sector administration, 2) envío de la FAQ de solicitud de crédito, 3) búsqueda de sucursales. Evidencia en el trace (turno cd2c912e...): flowcard.dispatch con SolicitudDeCredito y dimensionOverrides sector=administration; flow SolicitudDeCredito ejecutado (paso 'answer' de tipo knowledge) y la respuesta inicial envió el enlace de crédito personal (https://www.naldo.com.ar/credito-personal) con la oferta de mostrar sucursales. En el turno edd3f6cd... el bot cargó la skill solicitudCredito, que indica asignar la conversación al sector administration (conversation_assign_topic con topicKey flujoPV, ok), ejecutó smart_branch_search (Resistencia, Chaco) y display_store_locator, y devolvió la sucursal de Resistencia, Chaco (Pte. Juan Domingo Perón 146, lunes a sábados 8:30-12:30 y 17:00-21:00). Los tres puntos del requisito se cumplieron. Observación no bloqueante: el primer mensaje terminó con completion=timeout a los ~180 s aunque el bot sí respondió; y el segundo envío generó dos turnos del engine, el reporte de la herramienta sólo refleja el primero.",
+      "conversationUuid": "19e9a567-3462-44ff-acae-9dbffa5f1570",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial: 'me pueden hacer una evaluación crediticia?'. Ubicación pedida/dada: Resistencia, Chaco. Sin documento ni datos personales. Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15. Sesión 40f226a6-d6a3-490d-b5ad-d5f1320e19c9 (cerrada con mcp_end_conversation y mcp_end_session).",
+      "transcripcion": [
+        "user: me pueden hacer una evaluación crediticia?",
+        "bot: Para conocer los beneficios y obtener tu Credi Naldo, ingresá a [este enlace](https://www.naldo.com.ar/credito-personal), donde te indicamos cómo comprar online con crédito personal.\n\n¿Querés que te muestre las sucursales?",
+        "user: Sí, mostrame las sucursales, estoy en Resistencia, Chaco.",
+        "bot: [storeLocator widget: Resistencia, Chaco]",
+        "bot: ¡Sí! Encontré una sucursal en Resistencia, Chaco, en Pte. Juan Domingo Perón 146. Atiende de lunes a sábados de 8:30 a 12:30 y de 17:00 a 21:00. También te la muestro en el mapa."
+      ]
+    },
+    {
+      "test": "T-010",
+      "nombre": "Pedir una evaluación crediticia",
+      "requisitos": [
+        "Flujos de Pre-Venta › SolicitudDeCredito"
+      ],
+      "tags": [
+        "crédito"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Cumple el requisito de Pre-Venta > SolicitudDeCredito (activador: pedido de evaluacion crediticia). 1) Deriva a administracion: el trace muestra flowcard.dispatch a SolicitudDeCredito con dimensionOverrides sector=administration y chatServer.call assignSector con sector=administration. 2) Envia la FAQ de solicitud de credito: flow.step 'answer' tipo knowledge, fetchFaq (uuid b79fdce6-...), y el bot responde con el link a la info de Credi Naldo (naldo.com.ar/credito-personal). 3) Ejecuta la busqueda de sucursales: tool store_locator_search (fetchBranches, country AR) ejecutada al pedir sucursales, y el bot devuelve la sucursal de Resistencia (Pte. Juan Domingo Peron 146). El cliente no dio datos personales ni documento; la unica ubicacion dada fue Resistencia, Chaco, como indicaban las instrucciones. Nota: el primer envio cerro con completion timeout (180 s) pero la respuesta del bot llego y el flujo se ejecuto; el trace del turno 1 tiene los eventos de flujo.",
+      "conversationUuid": "a25289d9-ac9a-4b9f-b013-74a711503a41",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial exacto 'me pueden hacer una evaluación crediticia?'; ubicacion Resistencia, Chaco (solicitada en la conversacion); sin documento ni datos personales; pedido de sucursales.",
+      "transcripcion": [
+        "user: me pueden hacer una evaluación crediticia?",
+        "bot: Para conocer los beneficios y cómo obtener tu Credi Naldo, ingresá a https://www.naldo.com.ar/credito-personal. ¿Querés que te muestre las sucursales?",
+        "user: Sí, mostrame las sucursales, por favor.",
+        "bot: ¡Sí! Encontramos sucursales en distintas localidades del país. ¿En qué ciudad o zona querés ver las más cercanas?",
+        "user: Estoy en Resistencia, Chaco.",
+        "bot: En Resistencia tenemos una sucursal en **Pte. Juan Domingo Perón 146**. Atendemos de lunes a sábado, de 8:30 a 12:30 y de 17:00 a 21:00. Teléfonos: 362-154271984, 154271996 y 154272001."
+      ]
+    },
+    {
+      "test": "T-011",
+      "nombre": "Producto que llegó sin funcionar (garantía)",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok",
+        "Flujos de Post-Venta › createTicket:override:postsales"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Se cumplen los requisitos. (1) El primer mensaje del bot es el texto exacto 'Gracias por contactarte con el servicio de post venta de Naldo', seguido de la pregunta por nombre y apellido, sin ofrecer asistencia adicional. (2) El trace registra assignTopicsToConversation con topicKey 'flujoPV' y la conversacion queda con el topic 'Flujo PV' (flujoPV). (3) El flujo FlujopostventaQRok pidio producto, falla y sucursal de compra, y createTicket se ejecuto con ticketReason 'postsales' y ticketSubreason 'garantia' (ticket #NaldoGenVI-109). (4) El bot notifico 'El equipo de posventa se pondra en contacto con vos dentro de las proximas 24hs habiles. Muchas gracias!' (con '¡Muchas gracias!' en lugar de 'Muchas gracias!', diferencia solo de signos). Nota: el requisito indica que el campo reason del ticket esta vacio, pero en el payload del createTicket el ticketReason viene informado como 'postsales', por lo que esa advertencia no se reproduce. El bot tambien pidio email y DNI (datos de contacto del flujo) que no estaban en el alcance; se respondieron con datos genericos inventados.",
+      "conversationUuid": "ed5777b5-7c3d-41ec-9930-2a30b107707b",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Prueba; producto: lavarropas Drean de 8 kg; falla: no centrifuga y hace un ruido fuerte; sucursal: Corrientes centro; email: prueba.qa@ejemplo.com; DNI: 30123456 (inventado, pedido por el bot y no previsto en las instrucciones)",
+      "transcripcion": [
+        "user: me llegó el lavarropas y no anda",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Prueba",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: Lavarropas Drean de 8 kg",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: No centrifuga y hace un ruido fuerte",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: La de Corrientes centro",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: prueba.qa@ejemplo.com",
+        "bot: ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: 30123456",
+        "bot: Gracias, Juan. Ya quedó creado el reclamo #NaldoGenVI-109 por el lavarropas Drean de 8 kg. El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24 horas hábiles. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-011",
+      "nombre": "Producto que llegó sin funcionar (garantía)",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok",
+        "Flujos de Post-Venta › createTicket:override:postsales"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El requisito 1 pide que el bot envie el mensaje exacto 'Gracias por contactarte con el servicio de post venta de Naldo' (sin ofrecer asistencia adicional). El bot envio ese saludo pero concatenado en el mismo mensaje con una pregunta extra ('Para registrar tu caso, cuál es tu nombre y apellido?'), por lo que el mensaje no es el exacto. Ademas, antes de pedir producto, falla y sucursal (requisito 3), el flujo pidio nombre (trace: flow.suspend en field_nombre), y despues de la notificacion pidio email y DNI, datos no previstos en el alcance. Cumplido: el flujo se activo con el primer mensaje (topic flujoPV, flow FlujopostventaQRok), pidio producto, falla y sucursal, y envio el aviso de 24hs con el texto esperado (salvo el signo de apertura del cierre '!'). No verificable: la generacion del ticket con subreason 'garantia' y el campo reason; el trace de la corrida no muestra ninguna tool call ni paso de creacion de ticket.",
+      "conversationUuid": "72d09493-7873-4aab-ad31-49b864b455cb",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Prueba; Producto: lavarropas Drean de 8 kg; Falla: no centrifuga y hace un ruido fuerte; Sucursal: Corrientes centro (el bot no mostro lista de sucursales, pregunto directamente); Email: prueba.qa@ejemplo.com",
+      "transcripcion": [
+        "user: me llegó el lavarropas y no anda",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Prueba",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: lavarropas Drean de 8 kg",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: no centrifuga y hace un ruido fuerte",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: la de Corrientes centro",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: prueba.qa@ejemplo.com",
+        "bot: Gracias, Juan. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos."
+      ]
+    },
+    {
+      "test": "T-011",
+      "nombre": "Producto que llegó sin funcionar (garantía)",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok",
+        "Flujos de Post-Venta › createTicket:override:postsales"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Cumplido: el bot abre con el mensaje exacto 'Gracias por contactarte con el servicio de post venta de Naldo', deriva a flujoPV (topic Flujo PV asignado, sector flujopv) y pide producto, falla y sucursal (los tres datos). Avisa 'El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!'. Incumplido: (1) el requisito 3 pide generar un ticket con subreason 'garantia'; en la transcripción no hay evidencia de ticket creado: no aparece ningún evento ticket_create en el trace, el conversation.publicData.lead.ticketSubReason y ticketReason quedan en null, y el flowcard.contract muestra ticket_created como 'met' sin llamada de creación de ticket. Además el bot siguió pidiendo DNI para 'completar el reclamo' después del aviso, cosa que el test no contempla, y la prueba se cerró antes de ver si el ticket se generaba. (2) Antes de pedir los tres datos, el bot pidió nombre y apellido, y después de la notificación pidió email y DNI; el requisito pide solo producto, falla y sucursal, así que hay pedidos de datos extra no previstos. El campo reason del ticket no pudo verificarse (sigue vacío según la nota del requisito).",
+      "conversationUuid": "e1c9d792-922a-4989-a615-d0be16fa9ce8",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Prueba; producto: lavarropas Drean de 8 kg; falla: no centrifuga y hace un ruido fuerte; sucursal: Corrientes centro; email (pedido después del aviso): prueba.qa@ejemplo.com",
+      "transcripcion": [
+        "user: me llegó el lavarropas y no anda",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Prueba",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: Un lavarropas Drean de 8 kg",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: no centrifuga y hace un ruido fuerte",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: En la sucursal de Corrientes centro",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: prueba.qa@ejemplo.com",
+        "bot: Gracias, ya tengo tu email. Para completar el reclamo, pasame tu número de DNI solo con números, sin puntos."
+      ]
+    },
+    {
+      "test": "T-012",
+      "nombre": "Garantía con una sola palabra",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El bot activó el flujo de posventa con 'garantía' y registró el topic flujoPV, pero no cumplió los requisitos en varios puntos. (1) Requisito 1: el primer mensaje no es el texto exacto 'Gracias por contactarte con el servicio de post venta de Naldo' sin asistencia adicional; le agregó 'Para registrar tu caso, ¿cuál es tu nombre y apellido?', pidiendo un dato que el requisito no contempla. (2) Requisito 3: el requisito dice que solicita tres datos (Producto, Falla, Sucursal); el bot pidió además nombre y apellido al inicio y, después de la sucursal, pidió datos de contacto ('Para darte seguimiento necesito unos datos de contacto.' y '¿Cuál es tu email?'), antes de la notificación final. (3) Requisito 3 (subreason garantia): la conversación en chat-server muestra ticketSubReason null y ticketReason null; no se pudo verificar en el ticket que se haya generado con subreason 'garantia' (el requisito ya indicaba que el campo reason está vacío, pero la subreason tampoco aparece). (4) Requisito 4: la notificación final coincide con el texto exacto esperado ('El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!'). Nota: el bot mandó 2 mensajes extra de datos de contacto tras la sucursal, y el cliente cerró al recibir la notificación según instrucciones, sin responder al pedido de email.",
+      "conversationUuid": "c6dc0c1c-5c0c-4bad-886f-6e3e6c351912",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Pérez (dato no especificado en las instrucciones; elegido para responder la pregunta de nombre). Producto: microondas. Falla: no calienta. Sucursal: Posadas. Primer mensaje: 'garantía'.",
+      "transcripcion": [
+        "user: garantía",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Pérez",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: microondas",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: no calienta",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: Posadas",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?"
+      ]
+    },
+    {
+      "test": "T-012",
+      "nombre": "Garantía con una sola palabra",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito 1 no cumplido: el bot no envió el mensaje exacto 'Gracias por contactarte con el servicio de post venta de Naldo'; lo siguió con 'Para registrar tu caso, ¿cuál es tu nombre y apellido?', pidiendo un dato que el requisito no contempla. Requisito 2 cumplido: el topic flujoPV quedó asignado (sector flujopv). Requisito 3 incumplido: el pedido de producto, falla y sucursal se hizo en orden, pero flowcard.contract reporta 'ticket_created' como unmet y no hay evento de creación de ticket, por lo que no se generó ticket con subreason garantia. Requisito 4 cumplido: el aviso 'El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!' se envió tal cual (salvo el signo de apertura). Además, después del aviso el bot pidió datos de contacto (email) que el requisito no contempla. La activación con 'garantía' sí funcionó (flujo FlujopostventaQRok iniciado).",
+      "conversationUuid": "02fa381b-2e31-4093-b281-a257a006ac0b",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial: 'garantía'. Datos pedidos por el bot: producto = Microondas, falla = No calienta, sucursal = Posadas. Nombre: 'Juan Pérez' (no estaba en las instrucciones; lo respondí porque el bot lo pidió antes del producto). El bot pidió email después del aviso; no se respondió por indicación de cerrar tras el aviso.",
+      "transcripcion": [
+        "user: garantía",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Pérez",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: Microondas",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: No calienta",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: Posadas",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?"
+      ]
+    },
+    {
+      "test": "T-012",
+      "nombre": "Garantía con una sola palabra",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Se cumple el activador y el enrutamiento: el bot inicia el flujo flujoPV con 'garantía' (topic flujoPV registrado), y pide producto, falla y sucursal, y al final notifica el plazo de 24hs hábiles. Pero no cumple el requisito 1 de forma exacta: el primer mensaje no es solo 'Gracias por contactarte con el servicio de post venta de Naldo' sino que va seguido de 'Para registrar tu caso, ¿cuál es tu nombre y apellido?'. Además el requisito 3 pide solicitar tres datos (Producto, Falla, Sucursal) y el bot pidió antes nombre y apellido, y después de la notificación pidió email ('Para darte seguimiento necesito unos datos de contacto. ¿Cuál es tu email?'), lo que no está en el alcance. No se pudo verificar el ticket con subreason 'garantia' ni el reason vacío porque no se consultó el ticket; la evaluación se basa en la transcripción. Juicio: el criterio de mensaje exacto y de solicitud de exactamente tres datos no se cumple, por eso ERROR; si se considera que pedir nombre y email es parte del registro del ticket, el resultado sería OK.",
+      "conversationUuid": "35b82295-cc8c-45b6-9afe-3d0ab6c91057",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Pérez (inventado, el alcance no define nombre). Producto: microondas. Falla: no calienta. Sucursal: Posadas. Email: no se respondió (conversación cerrada).",
+      "transcripcion": [
+        "user: garantía",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Pérez",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: microondas",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: no calienta",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: Posadas",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?"
+      ]
+    },
+    {
+      "test": "T-013",
+      "nombre": "Producto roto con poco uso y falla en el primer mensaje",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El objetivo no se cumple: el bot no aprovecho el producto (televisor) ni la falla (no prende) informados en el primer mensaje. Tras el saludo exacto, pidio nombre y apellido, luego volvio a pedir producto y falla (dos veces, tras repetirlos el cliente), y recien al final pidio sucursal. Requisito 3: debia solicitar solo los datos que faltan (Sucursal) antes de generar el ticket de garantia; en cambio solicito Producto y Falla otra vez. Requisito 1: el saludo exacto 'Gracias por contactarte con el servicio de post venta de Naldo' aparece, pero va seguido de una pregunta de nombre y apellido, lo que no coincide con 'sin ofrecer asistencia adicional'. Cumplido: activacion del flujo FlujopostventaQRok (intent con confidence 1), derivacion a sector flujopv y topic flujoPV, aviso de 24hs hábiles entregado tras indicar la sucursal. No verificado: la generacion del ticket con subreason garantia y reason vacio (no hay tool calls en el trace). Observaciones fuera de requisitos: tras el aviso el bot pidio email y tomo el cierre del cliente ('Gracias, con eso me alcanza. Chau.') como email invalido. El primer turno y el segundo devolvieron completion 'timeout' a los 180s aunque el bot si respondio. El trace muestra varios engine turns y flow.start repetidos por envio.",
+      "conversationUuid": "35701d70-c1e5-40ad-bcb0-3a97742684eb",
+      "datosCambiados": false,
+      "datosUsados": "Nombre: Juan Pérez (dato no provisto por las instrucciones; lo inventé porque el bot lo pidió). Producto: televisor. Falla: no prende (repetida 3 veces). Sucursal: Santiago del Estero. Primer mensaje exacto: 'casi no la usé y se rompió la tele, no prende más'.",
+      "transcripcion": [
+        "user: casi no la usé y se rompió la tele, no prende más",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Pérez. El producto es un televisor y la falla es que no prende.",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: Ya te lo dije: es un televisor y no prende. Me lo volvés a preguntar?",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: La falla es que no prende. Ya lo dije dos veces, es un televisor que no prende. Me están pidiendo los mismos datos otra vez.",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: Lo compré en Santiago del Estero.",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "user: Gracias, con eso me alcanza. Chau.",
+        "bot: Ese email no parece válido. ¿Me lo pasás de nuevo?"
+      ]
+    },
+    {
+      "test": "T-013",
+      "nombre": "Producto roto con poco uso y falla en el primer mensaje",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito 'aproveche el producto y la falla ya informados y solo pida lo que falta (la sucursal)' no se cumplió. El primer mensaje ya informaba producto (televisor) y falla (se rompió, no prende). El flujo FlujopostventaQRok se activó bien (topic flujoPV, sector flujopv, mensaje de post venta exacto), pero antes de pedir la sucursal el bot pidió nombre y apellido (no previsto en el alcance), volvió a preguntar '¿Qué producto tenés con el problema?' y después '¿Qué falla presenta el producto?', aunque ya estaban informados. Solo al final pidió la sucursal. El aviso de 24hs hábiles se envió, pero luego el flujo siguió pidiendo email/teléfono (pasos de contacto no previstos en el alcance) y el ticket de garantía (ticket_create, subreason garantia) no aparece ejecutado en la traza: el flujo quedó suspendido en contact_email. Además el primer turno agotó el timeout (180 s) con una sola respuesta del bot, y el trace muestra 3 turnos de motor por envío (solo se reporta el primero). Nota: la instrucción del test indicaba que el campo reason del ticket está vacío, no verificable en esta corrida.",
+      "conversationUuid": "195dfdaa-4678-4833-96a2-a8655346c314",
+      "datosCambiados": false,
+      "datosUsados": "Producto: televisor ('La tele. Un televisor. No prende.'). Falla: 'No prende. Ya te lo dije, la tele no prende más.' Sucursal: Santiago del Estero. Nombre: Juan Pérez (inventado, el bot lo pidió y el test no lo especificaba). Email: no respondido, conversación cerrada tras el aviso de 24hs.",
+      "transcripcion": [
+        "user: casi no la usé y se rompió la tele, no prende más",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Pérez",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: La tele. Un televisor. No prende.",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: No prende. Ya te lo dije, la tele no prende más.",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: En Santiago del Estero.",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?"
+      ]
+    },
+    {
+      "test": "T-013",
+      "nombre": "Producto roto con poco uso y falla en el primer mensaje",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Activación y primer mensaje OK: el bot respondió con el texto exacto 'Gracias por contactarte con el servicio de post venta de Naldo' y derivó a flujoPV (topic flujoPV registrado). Notificación final OK: 'El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!'. FALLA en el objetivo: el requisito pide aprovechar el producto y la falla ya informados y pedir solo lo que falta (la sucursal). El bot pidió nombre y apellido (no requerido por el alcance), volvió a pedir el producto ('¿Qué producto tenés con el problema?') pese a que el cliente ya había dicho 'televisor' en el primer mensaje, y volvió a pedir la falla ('¿Qué falla presenta el producto?') pese a que ya había dicho 'no prende'. Recién después preguntó la sucursal. Además, después de la notificación de 24hs el bot pidió email ('¿Cuál es tu email?'), que no figura en el alcance. No se pudo verificar desde la transcripción el campo reason/subreason 'garantia' del ticket: publicData.lead muestra ticketReason y ticketSubReason en null.",
+      "conversationUuid": "59d4a637-bc36-4df0-9064-80129ce4b1b0",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje exacto: 'casi no la usé y se rompió la tele, no prende más'. Nombre (no pedido en instrucciones, inventado para continuar): 'Juan Pérez'. Producto: 'Un televisor' (repetido al bot cuando lo volvió a pedir). Falla: 'No prende' (repetida al bot cuando la volvió a pedir). Sucursal: 'Santiago del Estero'.",
+      "transcripcion": [
+        "user: casi no la usé y se rompió la tele, no prende más",
+        "bot: Gracias por contactarte con el servicio de post venta de Naldo. Para registrar tu caso, ¿cuál es tu nombre y apellido?",
+        "user: Juan Pérez",
+        "bot: ¿Qué producto tenés con el problema?",
+        "user: Un televisor. Ya te lo había dicho: se rompió la tele, no prende más.",
+        "bot: ¿Qué falla presenta el producto?",
+        "user: No prende. (Te lo repito, ya te lo había dicho: la falla es que no prende.)",
+        "bot: ¿En qué sucursal lo compraste?",
+        "user: Santiago del Estero.",
+        "bot: Para darte seguimiento necesito unos datos de contacto.",
+        "bot: ¿Cuál es tu email?",
+        "bot: El equipo de posventa se pondrá en contacto con vos dentro de las próximas 24hs hábiles. ¡Muchas gracias!"
+      ]
+    },
+    {
+      "test": "T-014",
+      "nombre": "Consultar dónde está la compra no activa posventa",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa",
+        "caso negativo"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito del test es que la consulta de seguimiento no dispare el flujo de posventa: no debe aparecer el mensaje 'Gracias por contactarte con el servicio de post venta de Naldo' ni pedirse producto, falla ni sucursal. En la transcripcion el bot respondio solo con el flujo de seguimiento (Seguimiento, dispatch directo; topic 'deliveryIssue', no 'flujoPV'). Nunca aparecio el mensaje de post venta, ni se pidieron Producto, Falla o Sucursal, ni se genero ticket de garantia. El bot pidio numero de pedido/factura, a lo que el cliente respondio que no lo tenia a mano, y el bot siguio con la indicacion de seguimiento por mail (Andreani). Ningun turno dispara FlujopostventaQRok. Nota: la respuesta del primer send termino en 'timeout' pero el output llego; el send siguiente reporto 3 turnos del motor, y el trace solo muestra dispatch a Seguimiento y load_skill 'cancelacion', sin flow de posventa.",
+      "conversationUuid": "48e166d8-279e-40ae-b765-8c06fe6290be",
+      "datosCambiados": false,
+      "datosUsados": "Pedido de prueba no especificado en las instrucciones; cliente que compro hace unos dias y pregunta cuando le llega. Sin numero de pedido (no disponible a mano).",
+      "transcripcion": [
+        "user: dónde está mi compra? todavía no me llegó",
+        "bot: Cuando entre en preparación, te van a enviar por mail el número de seguimiento. Ingresalo sin guiones ni puntos.",
+        "user: no lo tengo a mano, la verdad",
+        "bot: Entiendo. El número de pedido está en la parte superior izquierda de tu factura.",
+        "user: tampoco tengo la factura a mano. Solo quiero saber cuándo me llega",
+        "bot: Cuando tu pedido entre en preparación, Andreani te va a enviar por mail el número de seguimiento. Ingresalo sin guiones ni puntos."
+      ]
+    },
+    {
+      "test": "T-014",
+      "nombre": "Consultar dónde está la compra no activa posventa",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa",
+        "caso negativo"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito del test es que la consulta de seguimiento no dispare el flujo de posventa FlujopostventaQRok: no debe aparecer el mensaje 'Gracias por contactarte con el servicio de post venta de Naldo' ni pedirse producto, falla y sucursal. En la transcripción el bot respondió con información de seguimiento de Andreani (enlace de seguimiento, número de seguimiento por mail) y, solo de forma condicional ('Si ya figura retrasado...'), ofreció tomar nombre, email, teléfono y DNI para que un representante contacte; no apareció el mensaje de posventa ni se pidieron producto, falla o sucursal. El topic registrado es 'deliveryIssue' (Problema con la entrega), no flujoPV. Nota: el primer envío del segundo mensaje devolvió error upstream 502 de lapi (no llegó al bot) y se reintentó con éxito; el primer turno terminó en 'timeout' pero entregó la respuesta del bot; el reintento generó dos turnos en el motor (se reportó el primero). Como cliente no se aceptó el traspaso a una persona porque el pedido no figuraba retrasado.",
+      "conversationUuid": "b2c9da48-0fab-4863-a918-2773d8066244",
+      "datosCambiados": false,
+      "datosUsados": "Consulta de seguimiento sin fallas ni garantía: 'dónde está mi compra? todavía no me llegó'; cliente que compró hace unos días sin número de pedido a mano. Store uuid a74dfe81-372a-48f6-a650-cb2cf1f1b18f, usuario de test b8102cc6-6e93-45a8-9ee4-3531cc8fc6b5.",
+      "transcripcion": [
+        "user: dónde está mi compra? todavía no me llegó",
+        "bot: Lamento la demora. Si tenés un número de seguimiento de Andreani, podés ingresarlo en [su página de seguimiento](https://www.andreani.com/?tab=seguir-envio). Cuando el pedido entra en preparación, Andreani te envía ese número por mail. Si ya figura retrasado, pasame tu nombre, email, teléfono y DNI para tomar tus datos y que un representante te contacte.",
+        "user: no tengo el número de pedido a mano, la compra la hice hace unos días",
+        "bot: Entiendo. El número de pedido figura en la parte superior izquierda de la factura. Cuando la compra entra en preparación, Andreani te manda por mail el número de seguimiento para consultar el envío en su página."
+      ]
+    },
+    {
+      "test": "T-014",
+      "nombre": "Consultar dónde está la compra no activa posventa",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa",
+        "caso negativo"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito de T-014 es que una consulta de seguimiento no dispare el flujo de posventa (FlujopostventaQRok): no debe aparecer el mensaje 'Gracias por contactarte con el servicio de post venta de Naldo' ni pedirse producto, falla ni sucursal. En la transcripción el bot respondió al mensaje de seguimiento ('dónde está mi compra? todavía no me llegó') con información de Andreani sobre el número de seguimiento, y luego, ante la repetición de la consulta sobre la fecha de llegada, respondió que no puede confirmar la fecha. En ningún turno apareció el mensaje de servicio de post venta, ni se pidió producto, falla o sucursal, ni se registró el topic flujoPV. La metadata de la conversación muestra topics 'deliveryIssue' y 'orderStatus' y ticketSubReason vacío, consistente con que no se disparó el flujo de posventa. El bot no pidió número de pedido, así que no hizo falta responder que no lo tenía a mano; tampoco se ofreció hablar con una persona. Se cumple el objetivo del test.",
+      "conversationUuid": "5eb1681f-44d6-4344-a9b4-3c0204c1ac2e",
+      "datosCambiados": false,
+      "datosUsados": "Consulta de seguimiento de compra realizada hace unos días, sin número de pedido; mensaje inicial exacto 'dónde está mi compra? todavía no me llegó' y segundo turno 'y cuándo me va a llegar? la compra la hice hace unos días'. Sin menciones de falla ni garantía.",
+      "transcripcion": [
+        "user: dónde está mi compra? todavía no me llegó",
+        "bot: Cuando entre en preparación, Andreani te enviará por mail el número de seguimiento. Ingresalo sin guiones ni puntos.",
+        "user: y cuándo me va a llegar? la compra la hice hace unos días",
+        "bot: No puedo confirmarte una fecha de entrega. Cuando el pedido entre en preparación, Andreani te va a enviar por mail el número de seguimiento; ingresalo sin guiones ni puntos para consultar el envío."
+      ]
+    },
+    {
+      "test": "T-015",
+      "nombre": "Pedir la factura no activa posventa",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa",
+        "caso negativo"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito pide que un pedido de factura no active el flujo de posventa (FlujopostventaQRok) ni genere ticket de garantia. El bot respondio a 'necesito la factura de mi compra' con el mensaje de factura electronica por mail (topic invoiceRequest 'Solicitud de factura'), sin el mensaje 'Gracias por contactarte con el servicio de post venta de Naldo', sin derivar a flujoPV y sin ticket ni solicitud de Producto/Falla/Sucursal. Factura no figura en la lista de activadores de posventa (No activa: Factura). La trama no tiene eventos de trace (traceSummary total 0), por lo que la evaluacion se basa en transcripcion y topic de la conversacion. Nota: el turno termino por timeout del MCP (180s) aunque el bot respondio en ~17s; el mensaje llego igual.",
+      "conversationUuid": "c6827451-00ee-472c-b716-8de050ca5643",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje unico del cliente: 'necesito la factura de mi compra' (sin datos especificos; el test no los requiere).",
+      "transcripcion": [
+        "user: necesito la factura de mi compra",
+        "bot: Una vez confirmada la compra, te enviamos un mail con la factura electrónica adjunta. Si no la recibiste, podés pedir ayuda a una persona del equipo. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-015",
+      "nombre": "Pedir la factura no activa posventa",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa",
+        "caso negativo"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El pedido de factura no activó el flujo de posventa ni generó ticket de garantía. Requisito: 'No activa: ... Factura ...' y el objetivo 'un pedido de factura no dispare el flujo de posventa ni genere un ticket de garantía'. El bot respondió 'No se emite factura A en el sitio. Si la necesitás, no avances con la compra y comunicate al 0810-222-6253.' La conversación quedó con topic 'invoiceRequest' (Solicitud de factura); no aparece el topic flujoPV, no se envió el mensaje exacto de post venta ('Gracias por contactarte con el servicio de post venta de Naldo'), no se pidieron Producto/Falla/Sucursal y no se envió la notificación de 24hs. Nota: el turno terminó con completion 'timeout' tras 180s (no turn.end) y el trace vino vacío (eventCount 0), así que la evaluación se basa en la transcripción y el topic almacenado, no en el trace.",
+      "conversationUuid": "68d9d238-6d99-42d8-85c0-0815c8a8388d",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos (test requiere datos: false). Primer mensaje exacto: 'necesito la factura de mi compra'. Un solo turno del cliente; el bot ya indicó cómo conseguir la factura, por lo que se cerró la conversación.",
+      "transcripcion": [
+        "user: necesito la factura de mi compra",
+        "bot: No se emite factura A en el sitio. Si la necesitás, no avances con la compra y comunicate al 0810-222-6253."
+      ]
+    },
+    {
+      "test": "T-015",
+      "nombre": "Pedir la factura no activa posventa",
+      "requisitos": [
+        "Flujos de Post-Venta › FlujopostventaQRok"
+      ],
+      "tags": [
+        "posventa",
+        "caso negativo"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito: el pedido de factura no debe activar FlujopostventaQRok ni generar ticket de garantía (Factura figura en 'No activa'). Evidencia: el trace muestra flowcard.dispatch con directCardId 'FacturaA' (intent confidence 0.9) en todos los turnos; nunca se despachó FlujopostventaQRok. El bot respondió con el flujo de factura (topic 'invoiceRequest', 'Solicitud de factura'), nunca mandó el mensaje de post venta 'Gracias por contactarte con el servicio de post venta de Naldo', no derivó a flujoPV ni generó ticket (publicPData.lead.ticketReason/ticketSubReason vacíos). Las menciones a FlujopostventaQRok en el trace son sólo definiciones del catálogo de routing, no dispatches. Al pedir asesor el bot ofreció derivación humana (request_human_agent), y sin agentes disponibles pidió DNI; el test cerró ahí porque el bot ofreció una persona. Nota: el primer envío generó 2 engine turns (warning del server); se reportan los resultados del primero.",
+      "conversationUuid": "dffe297d-dd9c-40d4-b540-e73b17084798",
+      "datosCambiados": false,
+      "datosUsados": "Cliente genérico: compra online hace unos días, sin mencionar fallas. No se usaron datos específicos (requiere datos específicos: false). No se dio DNI.",
+      "transcripcion": [
+        "user: necesito la factura de mi compra",
+        "bot: Una vez confirmada la compra, te enviamos un mail con la factura electrónica adjunta. ¿No la encontrás en tu correo?",
+        "user: No, no la encontré en el correo. Compré online hace unos días.",
+        "bot: La información que tenemos indica que la factura electrónica se envía por mail una vez confirmada la compra, pero no especifica cómo recuperarla si no llegó. Puedo conectarte con un asesor para que te ayude a gestionarla. ¿Querés que lo haga?",
+        "user: Sí, por favor, conectame con un asesor.",
+        "bot: En este momento no hay agentes disponibles para atenderte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456)."
+      ]
+    },
+    {
+      "test": "T-016",
+      "nombre": "Cancelar un pedido todavía no despachado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced",
+        "Configuración Global › Estado de Pedido (orderStatus)",
+        "Configuración Global › Crear contacto"
+      ],
+      "tags": [
+        "cancelación",
+        "datos de contacto"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado approved, preparing, awaiting-payment, created o invoiced. Las instrucciones dicen 'dale el pedido PEDIDO_APPROVED', pero eso es un placeholder y no un numero de pedido real: el bot respondio 'No pude validar el pedido: el numero PEDIDO_APPROVED no parece ser un identificador valido'. Sin un numero de pedido (o email) real en estado no despachado, el flujo no llega a consultar orderStatus ni a pedir motivo y datos de contacto, por lo que el objetivo no es evaluable. Hacen falta: un numero de pedido o email real de una compra no despachada (approved/preparing/awaiting-payment/created/invoiced) para la tienda del bot.",
+      "conversationUuid": "237ae661-57d6-454c-bad1-5f6a2a114cef",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje 'quiero cancelar mi pedido'; numero de pedido enviado: 'PEDIDO_APPROVED' (placeholder literal, no un pedido real). No se enviaron motivo ni datos de contacto.",
+      "transcripcion": [
+        "user: quiero cancelar mi pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_APPROVED",
+        "bot: No pude validar el pedido: el número **PEDIDO_APPROVED** no parece ser un identificador válido. ¿Podés verificarlo y pasarme el número correcto?"
+      ]
+    },
+    {
+      "test": "T-016",
+      "nombre": "Cancelar un pedido todavía no despachado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced",
+        "Configuración Global › Estado de Pedido (orderStatus)",
+        "Configuración Global › Crear contacto"
+      ],
+      "tags": [
+        "cancelación",
+        "datos de contacto"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El bot cumplió el inicio del requisito: indicó que para avanzar necesita validar el estado del pedido y pidió número de pedido o email, sin ofrecer asistencia adicional. Pero no se pudo evaluar la ramificación ni el ticket: el identificador de pedido de las instrucciones es el placeholder literal PEDIDO_APPROVED, que el bot no encontró (\"No pude encontrar el pedido con ese número\"). Como alternativa se probó el email prueba.qa@ejemplo.com (el email de contacto inventado, no un email de compra real) y el bot respondió \"El email no me permite validar el estado desde acá\" y pidió de nuevo el número de pedido, sin llegar a consultar orderStatus. Para ejecutar el test hacen falta un número de pedido real (o email de compra real) de un pedido en estado approved, preparing, awaiting-payment, created o invoiced, para poder verificar el pedido de motivo, nombre, email, teléfono y DNI y el ticket con reason after y subreason cancelarPedido.",
+      "conversationUuid": "02a6e16e-6c88-47a5-bfcd-ae8b0fd3b996",
+      "datosCambiados": true,
+      "datosUsados": "Primer mensaje: \"quiero cancelar mi pedido\". Identificador de pedido: \"PEDIDO_APPROVED\" (placeholder literal, no un número real). Alternativa: email prueba.qa@ejemplo.com (contacto inventado, no email de compra). Motivo, nombre, email, teléfono y DNI no llegaron a usarse porque el bot no validó el pedido.",
+      "transcripcion": [
+        "user: quiero cancelar mi pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: Mi número de pedido es PEDIDO_APPROVED",
+        "bot: No pude encontrar el pedido con ese número. ¿Podés verificar si está escrito correctamente?",
+        "user: Entonces te paso el email de la compra: prueba.qa@ejemplo.com",
+        "bot: El email no me permite validar el estado desde acá. ¿Podés pasarme el número de pedido para consultar si se puede cancelar?"
+      ]
+    },
+    {
+      "test": "T-016",
+      "nombre": "Cancelar un pedido todavía no despachado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced",
+        "Configuración Global › Estado de Pedido (orderStatus)",
+        "Configuración Global › Crear contacto"
+      ],
+      "tags": [
+        "cancelación",
+        "datos de contacto"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado approved, preparing, awaiting-payment, created o invoiced. Las instrucciones dan el valor literal 'PEDIDO_APPROVED', que es un placeholder y no un número de pedido real. Al enviarlo, el bot respondió 'No pude validar el pedido con ese identificador' y no llegó a ramificar por estado, pedir el motivo ni pedir nombre, email, teléfono y DNI para el ticket de cancelación. Solo se pudo verificar la parte inicial del requisito 1 y 2: el bot indicó que necesita validar el estado del pedido y pidió número de pedido o email (uno solo). Para ejecutarlo hace falta un número de pedido o email real de una compra no despachada (approved, preparing, awaiting-payment, created o invoiced). No se probaron alternativas: no hay otros datos de pedido disponibles en las instrucciones.",
+      "conversationUuid": "0fbb38ee-2acc-4913-bf10-2ae31f23cda0",
+      "datosCambiados": false,
+      "datosUsados": "Pedido: 'PEDIDO_APPROVED' (placeholder literal, no es un pedido real). Sin datos de contacto enviados porque el bot no validó el pedido. Motivo y datos de contacto (Juan Prueba, prueba.qa@ejemplo.com, 3794000000, DNI 30000000) no llegaron a usarse.",
+      "transcripcion": [
+        "user: quiero cancelar mi pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: Mi pedido es PEDIDO_APPROVED",
+        "bot: No pude validar el pedido con ese identificador. ¿Podés verificar si el número de pedido es correcto y pasármelo nuevamente?"
+      ]
+    },
+    {
+      "test": "T-017",
+      "nombre": "Cancelar con el motivo dicho de entrada",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "No se pudo evaluar el requisito de cancelacion con pedido no despachado porque el test requiere un numero de pedido real en estado approved/preparing/awaiting-payment/created/invoiced, y las instrucciones solo indican el placeholder PEDIDO_APPROVED, que no es un pedido real: el bot respondio 'No pude encontrar un pedido con el identificador PEDIDO_APPROVED'. Al pasar el email ana.qa@ejemplo.com tampoco encontro pedido ('No pude encontrar un pedido con ese dato'). Lo que si cumplio el bot: al arrancar cancelarPedido indico que hacia falta validar el estado del pedido y pidio numero de pedido o email (requisito 1 y 2 de cancelarPedido, parcial). No se llego a verificar la ramificacion por estado, ni la rama cancelacion:orderStatus (pedir Motivo, guardarlo sin repetir, pedir datos de contacto, generar ticket con reason after / subreason cancelarPedido), porque el bot nunca obtuvo un pedido. Nota: la primera respuesta del bot tardo ~180s y el turno termino en timeout aunque la respuesta si aparecio. Datos que harian falta: un numero de pedido real (o email de compra) asociado a un pedido no despachado (approved, preparing, awaiting-payment, created o invoiced) cuyo email de compra sea el del test, para que el bot pueda consultar orderStatus y ramificar.",
+      "conversationUuid": "78628743-23fa-4582-9150-5c444ce0d886",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'me arrepentí de la compra, la quiero anular porque ya no la necesito'. Pedido: 'PEDIDO_APPROVED' (placeholder, no encontrado). Email: 'ana.qa@ejemplo.com' (no encontro pedido). Datos de contacto (Ana Prueba, 3794111111, DNI 31000000) no llegaron a usarse porque el bot no avanzo a esa etapa.",
+      "transcripcion": [
+        "user: me arrepentí de la compra, la quiero anular porque ya no la necesito",
+        "bot: Entiendo. Para avanzar con la cancelación, primero necesito validar el estado del pedido. Pasame el número de pedido o el email de la compra; con uno alcanza.",
+        "user: PEDIDO_APPROVED",
+        "bot: No pude encontrar un pedido con el identificador «PEDIDO_APPROVED». ¿Podés verificar si el número de pedido está escrito correctamente y pasármelo de nuevo?",
+        "user: ana.qa@ejemplo.com",
+        "bot: No pude encontrar un pedido con ese dato. Para revisar el estado, necesito el número de pedido; verificá cuál es y pasámelo, por favor."
+      ]
+    },
+    {
+      "test": "T-017",
+      "nombre": "Cancelar con el motivo dicho de entrada",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El requisito necesita un pedido real en estado no despachado (approved, preparing, awaiting-payment, created o invoiced) para ramificar cancelarPedido y llegar a cancelacion:orderStatus. El dato de las instrucciones era el placeholder literal 'PEDIDO_APPROVED', no un numero de pedido ni un email reales. El bot llamo order_status con orderId='PEDIDO_APPROVED', el tool devolvio found=false, error=order_id_invalid, y el bot pidio de nuevo el numero de pedido o el email. Sin un pedido real no se puede verificar que el bot guarde el motivo ya dicho sin volver a pedirlo ni que genere el ticket con reason after / subreason cancelarPedido. Datos que harian falta: un numero de pedido o email de compra real, en estado approved, preparing, awaiting-payment, created o invoiced.",
+      "conversationUuid": "b2ab2530-6aff-4a72-b8e2-e7498f6017cb",
+      "datosCambiados": false,
+      "datosUsados": "Pedido: 'PEDIDO_APPROVED' (placeholder literal, no valido). Contacto inventado no llegó a usarse: Ana Prueba, ana.qa@ejemplo.com, 3794111111, DNI 31000000.",
+      "transcripcion": [
+        "user: me arrepentí de la compra, la quiero anular porque ya no la necesito",
+        "bot: Entiendo. Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_APPROVED",
+        "bot: No pude validar el pedido con ese dato. Revisá si tenés el número de pedido o el email con el que hiciste la compra y pasame uno de los dos, por favor."
+      ]
+    },
+    {
+      "test": "T-017",
+      "nombre": "Cancelar con el motivo dicho de entrada",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: approved, preparing, awaiting-payment, created, invoiced"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado approved/preparing/awaiting-payment/created/invoiced para llegar a la rama cancelacion:orderStatus (motivo, datos de contacto, ticket reason after / subreason cancelarPedido). Las instrucciones dan el placeholder PEDIDO_APPROVED en vez de un número de pedido o email real; el bot lo rechazó ('No pude validar el pedido con el número PEDIDO_APPROVED; parece que no es un número de pedido válido'). No hay alternativa de datos indicada en las instrucciones, así que no se pudo verificar el requisito de guardar el motivo ya dicho sin volver a pedirlo. Lo que sí se verificó: el bot activó la cancelación (topic orderCancellation) y, al arrancar cancelarPedido, indicó que hace falta validar el estado del pedido y pidió número de pedido o email, sin ofrecer asistencia adicional. Datos necesarios para poder ejecutarlo: un número de pedido o email de una compra real en estado no despachado (approved, preparing, awaiting-payment, created o invoiced).",
+      "conversationUuid": "e1a34423-5967-4193-a1c4-c58e55a5807b",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'me arrepentí de la compra, la quiero anular porque ya no la necesito'. Número de pedido: 'PEDIDO_APPROVED' (placeholder literal de las instrucciones, rechazado por el bot). Datos de contacto inventados (Ana Prueba, ana.qa@ejemplo.com, 3794111111, DNI 31000000) no se llegaron a usar porque el bot no avanzó a esa rama.",
+      "transcripcion": [
+        "user: me arrepentí de la compra, la quiero anular porque ya no la necesito",
+        "bot: Entiendo. Para avanzar con la anulación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email con el que realizaste la compra?",
+        "user: PEDIDO_APPROVED",
+        "bot: No pude validar el pedido con el número “PEDIDO_APPROVED”; parece que no es un número de pedido válido. Verificá el número y pasámelo nuevamente."
+      ]
+    },
+    {
+      "test": "T-018",
+      "nombre": "Cancelar un pedido que ya está en camino",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: shipped",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado shipped (despachado) para validar el requisito de cancelarPedido / cancelacion:orderStatus: shipped. Las instrucciones dicen 'dale el pedido PEDIDO_SHIPPED', pero PEDIDO_SHIPPED es un placeholder y no un número de pedido real. El bot, al recibirlo, respondió 'No pude validar el pedido con ese dato' y luego 'el sistema indica que PEDIDO_SHIPPED no es un número de pedido válido', por lo que nunca llegó a consultar un estado shipped y no se pudo evaluar la rama de pedido en camino. Para ejecutar el test hace falta un número de pedido real (o email de compra) asociado a un pedido en estado shipped en la integración de la tienda. Comportamiento observado del bot en la parte evaluable: al iniciar, indicó que para avanzar necesita validar el estado del pedido (sin ofrecer asistencia adicional) y pidió número de pedido o email, lo que coincide con el paso 1 y el inicio del paso 2 de cancelarPedido.",
+      "conversationUuid": "744a527e-5de2-4398-b11f-c0b5fa9c4c3f",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial 'quiero cancelar mi compra'; número de pedido enviado: 'PEDIDO_SHIPPED' (placeholder literal, no es un pedido real). Sin pedido real en estado shipped disponible.",
+      "transcripcion": [
+        "user: quiero cancelar mi compra",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_SHIPPED",
+        "bot: No pude validar el pedido con ese dato. Revisá si el número de pedido está escrito correctamente y pasámelo de nuevo.",
+        "user: Necesito cancelar igual, el pedido es PEDIDO_SHIPPED. No me sirve otra opción.",
+        "bot: No pude validar el pedido: el sistema indica que «PEDIDO_SHIPPED» no es un número de pedido válido. Revisá el número y pasámelo correctamente para poder verificar su estado."
+      ]
+    },
+    {
+      "test": "T-018",
+      "nombre": "Cancelar un pedido que ya está en camino",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: shipped",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real despachado (estado shipped) para verificar el requisito de cancelacion:orderStatus: shipped (informar que el pedido esta en camino, que no puede cancelarse hasta recibirlo, mencionar que luego se puede seguir con la devolucion, sin ofrecer asistencia adicional y sin generar ticket). Las instrucciones dicen dar el pedido PEDIDO_SHIPPED, pero es un placeholder y no un numero de pedido real: el bot consulto order_status con ese valor literal, el sistema no lo reconocio y el bot respondio 'No pude validar el pedido PEDIDO_SHIPPED' dos veces, sin llegar a la rama shipped. Las instrucciones no indican datos alternativos. Para ejecutar el test hace falta un numero de pedido o email de una compra real en estado shipped (en camino) en el entorno de QA.",
+      "conversationUuid": "3f218095-57ec-4ff0-a679-7d1d81682d98",
+      "datosCambiados": false,
+      "datosUsados": "Numero de pedido: PEDIDO_SHIPPED (literal del placeholder de las instrucciones, no valido). Mensajes: 'quiero cancelar mi compra', 'PEDIDO_SHIPPED', 'Necesito cancelarlo igual, es el pedido PEDIDO_SHIPPED.'",
+      "transcripcion": [
+        "user: quiero cancelar mi compra",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_SHIPPED",
+        "bot: No pude validar el pedido con el número **PEDIDO_SHIPPED**. ¿Podés revisar si el número es correcto?",
+        "user: Necesito cancelarlo igual, es el pedido PEDIDO_SHIPPED.",
+        "bot: No pude validar el pedido **PEDIDO_SHIPPED**: el sistema no lo reconoce. Revisá si el número está escrito correctamente y pasámelo de nuevo."
+      ]
+    },
+    {
+      "test": "T-018",
+      "nombre": "Cancelar un pedido que ya está en camino",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: shipped",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado shipped (en camino). Las instrucciones usan el placeholder literal PEDIDO_SHIPPED como número de pedido, que no corresponde a un pedido real: el bot consultó el estado (tool order_status) y respondió que no pudo validar ni encontrar el pedido «PEDIDO_SHIPPED». Por eso nunca se llegó a la rama cancelacion:orderStatus: shipped, y no se pudo verificar el requisito (informar que el pedido está en camino, no puede cancelarse hasta recibirlo, mencionar que después se puede seguir con la devolución, sin ofrecer asistencia adicional y sin generar ticket). Las instrucciones no indican una alternativa de datos. Para ejecutar el test hace falta un número de pedido (o email de compra) real de un pedido despachado y no entregado en la integración de la tienda de este bot. Se insistió una vez como indican las instrucciones, sin resultado. Lo que sí se observó: en el primer turno el bot pidió número de pedido o email, cumpliendo el primer punto del comportamiento esperado de cancelarPedido.",
+      "conversationUuid": "5109eaa4-d862-48f5-9e29-474e43886cbd",
+      "datosCambiados": false,
+      "datosUsados": "Número de pedido: PEDIDO_SHIPPED (placeholder de las instrucciones, no existe en la integración; el bot respondió que no lo encuentra). Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15.",
+      "transcripcion": [
+        "user: quiero cancelar mi compra",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_SHIPPED",
+        "bot: No pude validar el pedido con el número «PEDIDO_SHIPPED». ¿Podés verificar si el número es correcto y pasármelo de nuevo?",
+        "user: Necesito cancelarlo igual, el pedido es PEDIDO_SHIPPED.",
+        "bot: No encuentro el pedido con el número «PEDIDO_SHIPPED». Verificá si el número es correcto y pasámelo nuevamente."
+      ]
+    },
+    {
+      "test": "T-019",
+      "nombre": "Cancelar un pedido con número inexistente",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El bot cumple los requisitos. (1) Ante 'quiero anular un pedido' responde que para avanzar con la anulación necesita validar el estado del pedido, sin ofrecer asistencia adicional (cancelarPedido, comportamiento 1). (2) Pide un único dato, número de pedido o email ('con uno de los dos alcanza'), consulta el estado (order_status) y ramifica: al recibir 99999999 la consulta no encuentra pedido y el bot responde 'No encuentro un pedido con el número 99999999. Verificá si el número es correcto y pasámelo de nuevo', es decir avisa que no lo encontró y pide verificarlo (cancelacion:orderStatus: inexistent). No se generó ticket (en el trace no hay tool de ticket, solo order_status y conversation_end) y no se pidieron datos adicionales más allá de reenviar el número. Observación menor: tras el cierre del cliente el bot responde '¿Necesitás algo más?', lo que no está pedido por el requisito pero no viola ninguna restricción.",
+      "conversationUuid": "e8165eaf-26a3-40f5-a22d-6ae09ef86ccf",
+      "datosCambiados": false,
+      "datosUsados": "Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15; número de pedido inexistente 99999999 (dato de las instrucciones, usado tal cual)",
+      "transcripcion": [
+        "user: quiero anular un pedido",
+        "bot: Para avanzar con la anulación, primero necesito validar el estado del pedido. Pasame el número de pedido o el email usado en la compra; con uno de los dos alcanza.",
+        "user: 99999999",
+        "bot: No encuentro un pedido con el número 99999999. Verificá si el número es correcto y pasámelo de nuevo.",
+        "user: Ok, lo voy a revisar. Gracias.",
+        "bot: ¡De nada! Cuando tengas el número correcto, pasámelo y seguimos. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-019",
+      "nombre": "Cancelar un pedido con número inexistente",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El bot cumplió los requisitos de cancelarPedido y cancelacion:orderStatus inexistent. (1) Ante 'quiero anular un pedido' indicó que para avanzar con la anulación necesita validar el estado del pedido, sin ofrecer asistencia adicional. (2) Pidió el número de pedido o el email de la compra, uno solo, y consultó el estado con order_status (trace: tool.start order_status con orderId 99999999). (3) Como el pedido no existe, ramificó a inexistent: 'El pedido con el número 99999999 no aparece. ¿Podés verificar si el número es correcto?'. Avisa que no existe el pedido y pide verificarlo. No generó ticket (único tool call del turno fue order_status) y no pidió datos adicionales.",
+      "conversationUuid": "527a1bac-8990-46af-b4bf-40a4dca98d2a",
+      "datosCambiados": false,
+      "datosUsados": "Número de pedido inexistente: 99999999 (el cliente se equivocó al copiar el número). Mensajes del cliente: 'quiero anular un pedido', '99999999', 'Sí, voy a revisarlo. Gracias.'",
+      "transcripcion": [
+        "user: quiero anular un pedido",
+        "bot: Para avanzar con la anulación, primero necesito validar el estado del pedido. Pasame el número de pedido o el email de la compra (uno solo).",
+        "user: 99999999",
+        "bot: El pedido con el número 99999999 no aparece. ¿Podés verificar si el número es correcto?",
+        "user: Sí, voy a revisarlo. Gracias.",
+        "bot: Dale, cuando lo tengas pasame el número correcto y reviso el estado del pedido."
+      ]
+    },
+    {
+      "test": "T-019",
+      "nombre": "Cancelar un pedido con número inexistente",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El bot cumplió los requisitos de cancelarPedido y cancelacion:orderStatus: inexistent. (1) Ante 'quiero anular un pedido' indicó que para avanzar con la cancelación necesita validar el estado del pedido, sin ofrecer asistencia adicional. (2) Pidió el número de pedido o el email (uno solo). (3) Con 99999999 consultó order_status (única tool llamada en el turno), y respondió 'No encontramos un pedido con el número 99999999. ¿Podés verificar si el número es correcto?', que es el aviso de inexistente pedido en el requisito. No generó ticket (ninguna tool de ticket en el trace) y no pidió datos adicionales. La última respuesta '¿Necesitás algo más?' fue un cierre tras el 'lo voy a revisar' del cliente, no una solicitud de datos.",
+      "conversationUuid": "66afac8b-75f4-4ea4-a02c-4ade0af8e73b",
+      "datosCambiados": false,
+      "datosUsados": "Número de pedido 99999999 (inexistente). No se usó email.",
+      "transcripcion": [
+        "user: quiero anular un pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email con el que lo compraste?",
+        "user: 99999999",
+        "bot: No encontramos un pedido con el número 99999999. ¿Podés verificar si el número es correcto?",
+        "user: Sí, lo voy a revisar. Gracias",
+        "bot: Dale, quedo atento. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-020",
+      "nombre": "Cancelar con un email sin pedidos",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El bot no cumplió el objetivo: al recibir el email como alternativa al número de pedido, llamó a order_status pasando el email como orderId (trace: tool.start order_status input {\"orderId\": \"qa.sin.pedidos@ejemplo.com\"}), la herramienta devolvió found:false, error order_id_invalid, y el bot respondió 'No pude validar el pedido con ese email. Para consultar el estado necesito el número de pedido', volviendo a pedir el número. Requisito cancelarPedido: el bot debía consultar el estado con order_status usando el número o el email de la compra (uno solo) y ramificar; el email no fue aceptado como alternativa. Requisito cancelacion:orderStatus: inexistent: el bot debía avisar que no existe un pedido con el dato compartido y pedir verificar si es correcto, sin ticket y sin pedir datos adicionales; no dijo que el pedido no existe ni pidió verificar el dato, y en el trace se observa que disparó una solicitud de DNI (backstop contact_create: '¿Cuál es tu número de DNI?') que no se emitió al cliente pero evidencia el pedido de datos adicionales. Positivo: no creó ticket. Nota de trazabilidad: no hubo error de tools ni timeout de turno tras el primer mensaje (completion timeout de 180 s en el primer turno, sin salida de error), el resto de turnos terminó con turn.end.",
+      "conversationUuid": "26f5f8f5-fa09-41c5-b8ab-7bf4abc74cc7",
+      "datosCambiados": false,
+      "datosUsados": "Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15 (store a74dfe81-372a-48f6-a650-cb2cf1f1b18f). Sin número de pedido (el cliente dice no tenerlo). Email qa.sin.pedidos@ejemplo.com, que no corresponde a ningún pedido.",
+      "transcripcion": [
+        "user: quiero cancelar la compra que hice",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado de tu pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: No tengo el número de pedido. Mi email es qa.sin.pedidos@ejemplo.com",
+        "bot: No pude validar el pedido con ese email. Para consultar el estado necesito el número de pedido; ¿podés revisar si lo encontrás en el mail de confirmación?",
+        "user: No lo encuentro, no tengo el número. Lo voy a revisar, gracias.",
+        "bot: El número de pedido aparece en la parte superior izquierda de la factura. Cuando lo encuentres, pasámelo y seguimos con la consulta de cancelación.",
+        "user: Ok, lo voy a revisar y te escribo después. Gracias, chau.",
+        "bot: ¡Dale! Revisalo y cuando lo encuentres, escribime para que podamos continuar con la consulta de cancelación. ¡Chau!"
+      ]
+    },
+    {
+      "test": "T-020",
+      "nombre": "Cancelar con un email sin pedidos",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito cancelacion:orderStatus: inexistent: 'Avisa que no existe un pedido con el número compartido y pide verificar si es correcto. No genera ticket ni solicita datos adicionales. Si order_status devuelve un estado desconocido, se trata como inexistente.' El bot consultó order_status con el email y la tool devolvió found=false, error=order_id_invalid (no encontró pedido). El bot no avisó que no existe un pedido: dijo 'No pude validar el pedido con ese email; esta consulta necesita el número de pedido' y pidió que el cliente revisara el correo para encontrar el número. Luego, sin que el cliente aportara datos de pedido, pidió el DNI ('¿me pasás tu DNI solo con números, sin puntos?'), lo que viola 'No ... solicita datos adicionales'. Puntos OK: aceptó el email como alternativa al número de pedido y no generó ticket (no hubo ticket_create en la traza). Nota: el primer turno pidió número de pedido o email en un solo mensaje, correcto.",
+      "conversationUuid": "7e4870fd-0e0a-4457-91ae-bd738eedcd6c",
+      "datosCambiados": false,
+      "datosUsados": "Email qa.sin.pedidos@ejemplo.com (sin número de pedido). Respuesta de order_status: found=false, error=order_id_invalid. Al decir que lo revisaría, el cliente cerró la conversación.",
+      "transcripcion": [
+        "user: quiero cancelar la compra que hice",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email con el que hiciste la compra?",
+        "user: No tengo el número de pedido. Mi email es qa.sin.pedidos@ejemplo.com",
+        "bot: No pude validar el pedido con ese email; esta consulta necesita el número de pedido. ¿Podés revisar si lo encontrás en el correo de confirmación y pasármelo?",
+        "user: Lo voy a revisar, gracias.",
+        "bot: Dale, revisalo. Mientras tanto, ¿me pasás tu DNI solo con números, sin puntos?",
+        "user: No lo tengo a mano. Lo voy a revisar y después veo. Chau, gracias.",
+        "bot: ¡Dale, gracias! Cuando encuentres el número de pedido, pasámelo y seguimos con la cancelación. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-020",
+      "nombre": "Cancelar con un email sin pedidos",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Flujos de Post-Venta › cancelacion:orderStatus: inexistent"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El bot cumplió la primera parte: pidió número de pedido o email (uno solo) para validar el estado del pedido, y al recibir el email consultó el pedido y lo ramificó como no encontrado. Pero incumplió el requisito cancelacion:orderStatus: inexistent, que dice 'No genera ticket ni solicita datos adicionales'. Tras avisar que no había pedidos, le pidió al cliente 'otro email asociado a la compra' para verificar, y luego, cuando el cliente dijo que lo iba a revisar, le pidió el DNI ('¿Cuál es tu número de DNI? (Solo números, sin puntos)'). Ambas son solicitudes de datos adicionales. No se generó ticket (solo se ejecutaron contact_create y conversation_end).",
+      "conversationUuid": "1f02671f-a0c2-4338-abf4-b86d1bdc2c60",
+      "datosCambiados": false,
+      "datosUsados": "Email: qa.sin.pedidos@ejemplo.com (sin número de pedido). Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15.",
+      "transcripcion": [
+        "user: quiero cancelar la compra que hice",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email usado en la compra?",
+        "user: no tengo el número de pedido, pero mi email es qa.sin.pedidos@ejemplo.com",
+        "bot: No encontré pedidos asociados a ese email. Si tenés otro email asociado a la compra, pasámelo para verificar.",
+        "user: ok, lo voy a revisar, gracias",
+        "bot: Dale, revisalo. Cuando lo tengas, pasame el número de pedido o el email de compra y lo verifico. ¿Cuál es tu número de DNI? (Solo números, sin puntos).",
+        "user: no tengo el DNI a mano, lo voy a revisar después. chau, gracias",
+        "bot: ¡Chau! Cuando tengas el número de pedido o el email de compra, escribime y seguimos con la solicitud de cancelación."
+      ]
+    },
+    {
+      "test": "T-021",
+      "nombre": "Cancelar un pedido ya entregado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El objetivo (pedido entregado: el bot indica que lo revisara una persona del equipo y ofrece derivacion) no pudo evaluarse porque las instrucciones solo dan el placeholder PEDIDO_ENTREGADO, no un numero de pedido real en estado entregado. Al usarlo como numero de pedido, el bot respondio 'No encuentro un pedido con el numero PEDIDO_ENTREGADO' y pidio verificarlo, sin consultar un pedido en estado entregado. Hacen falta: un numero de pedido (o email de compra) real en estado entregado para la tienda del bot. Lo que si se observo: el primer turno cumple el paso 1 y 2 del requisito (pide numero de pedido o email, sin ofrecer asistencia adicional). La primera respuesta fue un timeout de la espera del turno, aunque la respuesta del bot aparecio.",
+      "conversationUuid": "1880710e-1602-465b-8b96-f1ce64bacf22",
+      "datosCambiados": false,
+      "datosUsados": "Pedido: 'PEDIDO_ENTREGADO' (placeholder literal, no es un numero de pedido real). Email: no provisto.",
+      "transcripcion": [
+        "user: quiero cancelar un pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: Mi pedido es PEDIDO_ENTREGADO",
+        "bot: No encuentro un pedido con el número «PEDIDO_ENTREGADO». ¿Podés verificar si el número es correcto y pasármelo de nuevo?"
+      ]
+    },
+    {
+      "test": "T-021",
+      "nombre": "Cancelar un pedido ya entregado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado entregado (o ya cancelado) para verificar que el bot indique que lo revisará una persona del equipo y ofrezca la derivación (requisito: 'Si el pedido está entregado o ya cancelado, indica que lo revisará una persona del equipo y ofrece la derivación'). Las instrucciones dan el dato 'PEDIDO_ENTREGADO', que es un placeholder y no un número de pedido real: el bot respondió 'No encuentro un pedido con el número «PEDIDO_ENTREGADO»' y no llegó a consultar el estado del pedido en la integración. No había email ni otra alternativa en las instrucciones para probar el caso. Hace falta un número de pedido (o email) real de una compra entregada, o ya cancelada, en la tienda de prueba. El paso 1 sí se cumplió: ante 'quiero cancelar un pedido' el bot pidió el número de pedido para validar el estado antes de avanzar, sin ofrecer asistencia adicional.",
+      "conversationUuid": "a6b65211-7fe9-4fc4-a4b1-7ecfa0291286",
+      "datosCambiados": false,
+      "datosUsados": "Número de pedido: PEDIDO_ENTREGADO (placeholder literal, no un pedido real). Sin email. Mensajes del usuario: 'quiero cancelar un pedido', 'PEDIDO_ENTREGADO'.",
+      "transcripcion": [
+        "user: quiero cancelar un pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido?",
+        "user: PEDIDO_ENTREGADO",
+        "bot: No encuentro un pedido con el número «PEDIDO_ENTREGADO». ¿Podés verificar si el número es correcto?"
+      ]
+    },
+    {
+      "test": "T-021",
+      "nombre": "Cancelar un pedido ya entregado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El bot cumplió la primera parte del requisito (cancelarPedido): ante 'quiero cancelar un pedido' pidió el número de pedido o el email, sin ofrecer asistencia adicional. Pero el dato de las instrucciones, 'PEDIDO_ENTREGADO', es un marcador y no un número de pedido real: el bot respondió 'No pude encontrar el pedido con el dato «PEDIDO_ENTREGADO»', por lo que nunca se consultó orderStatus ni se llegó a la rama de pedido entregado (indicar revisión por una persona y ofrecer derivación), que es el objetivo del test. Para ejecutarlo hace falta un número de pedido real (o email de compra) de un pedido en estado entregado de la tienda del bot, que no está disponible en las instrucciones.",
+      "conversationUuid": "12c53569-ae85-4595-9dbd-bf4ac53af075",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'quiero cancelar un pedido'. Dato enviado al pedir número/email: 'PEDIDO_ENTREGADO' (literal, sin número real). Ningún pedido real en estado entregado fue usado.",
+      "transcripcion": [
+        "user: quiero cancelar un pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_ENTREGADO",
+        "bot: No pude encontrar el pedido con el dato «PEDIDO_ENTREGADO». Verificá si el número de pedido es correcto y pasámelo nuevamente."
+      ]
+    },
+    {
+      "test": "T-022",
+      "nombre": "Cancelar un pedido que ya está cancelado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado cancelado para ramificar segun el requisito de cancelarPedido (pedido entregado o ya cancelado -> indicar que lo revisara una persona del equipo y ofrecer derivacion). Las instrucciones dan como dato el literal 'PEDIDO_CANCELADO', que no es un numero de pedido real: el bot respondio 'No encuentro un pedido con el numero PEDIDO_CANCELADO' y no consulto el estado. No hay alternativa indicada en las instrucciones (no se dio email ni otro numero). Para ejecutar el test hace falta el numero de pedido (o email de compra) de un pedido real en estado cancelado. Lo que si se observo: el primer turno cumple el requisito 1 (indica que necesita validar el estado del pedido, sin ofrecer asistencia adicional) y el bot pide numero de pedido o email (requisito 2), pero la ramificacion por estado no pudo evaluarse.",
+      "conversationUuid": "b72d4fea-d585-4bd5-9199-ea460e17688f",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'cancelen mi pedido por favor'. Numero de pedido: 'PEDIDO_CANCELADO' (literal de las instrucciones, no es un pedido real; el bot no lo encontro). Sin email.",
+      "transcripcion": [
+        "user: cancelen mi pedido por favor",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido?",
+        "user: PEDIDO_CANCELADO",
+        "bot: No encuentro un pedido con el número «PEDIDO_CANCELADO». ¿Podés verificar si el número de pedido es correcto?"
+      ]
+    },
+    {
+      "test": "T-022",
+      "nombre": "Cancelar un pedido que ya está cancelado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado cancelado. Las instrucciones dan el literal 'PEDIDO_CANCELADO' como número de pedido, que es un placeholder y no un número válido: el bot no pudo validarlo y pidió reintentar ('No pude validar el pedido con el número PEDIDO_CANCELADO'). Por eso nunca llegó a consultar orderStatus (namespace cancelacion) y no se pudo evaluar el requisito de Post-Venta › cancelarPedido (si el pedido está ya cancelado, indicar que lo revisará una persona del equipo y ofrecer la derivación). Hace falta un número de pedido o email real de una compra en estado cancelado para ejecutar el test. Nota: el turno del primer mensaje terminó por timeout (180s) aunque sí llegó la respuesta del bot, y el envío del segundo mensaje generó 2 turnos del engine (el resultado reportado es del primero).",
+      "conversationUuid": "8e2502be-0b4d-4683-acd2-f18164a5eb87",
+      "datosCambiados": false,
+      "datosUsados": "Primer mensaje: 'cancelen mi pedido por favor'. Número de pedido: 'PEDIDO_CANCELADO' (literal del placeholder, no un pedido real).",
+      "transcripcion": [
+        "user: cancelen mi pedido por favor",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email con el que hiciste la compra?",
+        "user: PEDIDO_CANCELADO",
+        "bot: No pude validar el pedido con el número “PEDIDO_CANCELADO”. Revisá si el número está escrito correctamente y pasámelo de nuevo, por favor."
+      ]
+    },
+    {
+      "test": "T-022",
+      "nombre": "Cancelar un pedido que ya está cancelado",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Estado de Pedido (orderStatus)"
+      ],
+      "tags": [
+        "cancelación"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "NO_EJECUTABLE",
+      "motivo": "El test requiere un pedido real en estado cancelado para llegar a la rama 'ya cancelado' del requisito (cancelarPedido: si el pedido esta entregado o ya cancelado, indica que lo revisara una persona del equipo y ofrece la derivacion). Las instrucciones dieron como dato el literal 'PEDIDO_CANCELADO', que es un placeholder y no un numero de pedido ni un email real. El bot cumplio el paso 1 (indico que necesita validar el estado del pedido sin ofrecer asistencia adicional) y el paso 2 (pidio numero de pedido o email), pero al recibir el placeholder no pudo validar el pedido y volvio a pedir el dato, por lo que nunca se consulto orderStatus con un pedido cancelado y no se evalua la derivacion. Datos que faltan: un numero de pedido real (o email de compra) de un pedido en estado cancelado en el bot 0c73d3f4-7133-41f6-992b-67c0b50e3d15. Nota: el primer turno termino en timeout (180 s) pero la respuesta del bot llego igual.",
+      "conversationUuid": "926b0200-ea07-449d-8472-e644ca68460c",
+      "datosCambiados": false,
+      "datosUsados": "Mensaje inicial: 'cancelen mi pedido por favor'. Dato de pedido: 'PEDIDO_CANCELADO' (literal de las instrucciones, no es un numero de pedido real). No se probaron alternativas: no hay un pedido cancelado real disponible en los datos provistos.",
+      "transcripcion": [
+        "user: cancelen mi pedido por favor",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: PEDIDO_CANCELADO",
+        "bot: No pude validar el pedido con el número **PEDIDO_CANCELADO**. ¿Podés verificar si el número es correcto y pasármelo de nuevo?"
+      ]
+    },
+    {
+      "test": "T-023",
+      "nombre": "Cambio de tema durante la cancelación",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "cancelación",
+        "cambio de tema"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El objetivo del test se cumplio: ante el cambio de tema el bot atendio la consulta de promociones sin volver a pedir el numero de pedido ni forzar la cancelacion, y al cerrar respondio sin reabrir el flujo. Pero no cumple el requisito de Configuracion Global > Promociones: 'Si no hay una promocion vigente informada, aclara que hay productos con promociones incluidas en su precio y ofrece la ayuda de una persona del equipo'. El bot aclaro que tiene heladeras con descuentos incluidos en el precio, pero no ofrecio la ayuda de una persona del equipo; en cambio mostro un carrusel de 5 heladeras y pregunto si le sirve alguna. Nota: el envio de la promo devolvio completion 'turn.end' con outputCount 0 porque la respuesta salio en el segundo turno del mismo envio (warning del servidor); la respuesta visible se verifico en la transcripcion.",
+      "conversationUuid": "f85adfb5-1366-4490-9b8c-f50c9abbd9a3",
+      "datosCambiados": false,
+      "datosUsados": "Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15. Cliente indeciso: pidio cancelar, el bot pidio numero de pedido o email, el cliente no los dio y pregunto por promos en heladeras. Sin datos de pedido.",
+      "transcripcion": [
+        "user: quiero cancelar mi pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. Pasame el número de pedido **o** el email con el que hiciste la compra.",
+        "user: pará, antes decime si tienen alguna promo en heladeras, capaz no cancelo",
+        "bot: [carrusel de productos: 5 heladeras con descuento (Mihura 328L, Mihura 239L, Drean 314L, Drean 364L, Drean 264L)]",
+        "bot: ¡Qué bueno que quieras revisar opciones antes de cancelar! No puedo confirmar promociones vigentes; sí tenemos algunas heladeras con descuentos ya incluidos en el precio. Te muestro opciones:\n\n¿Te sirve este o buscás otra cosa?",
+        "user: ok gracias, por ahora no busco heladera. Chau",
+        "bot: ¡Dale, chau! Si después necesitás algo más, escribime."
+      ]
+    },
+    {
+      "test": "T-023",
+      "nombre": "Cambio de tema durante la cancelación",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "cancelación",
+        "cambio de tema"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El objetivo del test se cumplió: al cambiar de tema el bot no forzó la cancelación, atendió la consulta de promociones y cerró dejando la cancelación en pausa. Pero falló el requisito de Configuración Global › Promociones: 'Si no hay una promoción vigente informada, aclara que hay productos con promociones incluidas en su precio y ofrece la ayuda de una persona del equipo'. En la respuesta sobre promociones el bot dijo 'No puedo confirmar una promoción adicional o general vigente para heladeras' y derivó a naldo.com.ar, pero no ofreció la ayuda de una persona del equipo en ningún turno, y no aclaró de forma explícita que los productos tienen promociones incluidas en su precio (sólo dijo que 'tienen descuentos reflejados en sus precios actuales'). Además, en el primer turno de promociones respondió con un carrusel de 5 heladeras en lugar de la respuesta del flujo de Promociones. Requisito de cancelarPedido (pedir estado del pedido, número o email, uno solo) cumplido en el primer turno.",
+      "conversationUuid": "1e477a71-6caa-452a-b707-d8a5a68a9270",
+      "datosCambiados": false,
+      "datosUsados": "Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15. Primer mensaje 'quiero cancelar mi pedido'. Cliente indeciso: al pedido de número/email respondió con el cambio de tema pidiendo promos en heladeras. Sin datos de pedido (no se proporcionó número ni email, según las instrucciones del test).",
+      "transcripcion": [
+        "user: quiero cancelar mi pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email de la compra?",
+        "user: pará, antes decime si tienen alguna promo en heladeras, capaz no cancelo",
+        "bot: ¡Qué bueno que lo estés reconsiderando! No puedo confirmar promociones vigentes en heladeras, pero te muestro algunas opciones con sus precios actuales.\n\n¿Te sirve este o buscás otra cosa?",
+        "bot: [carrusel de 5 heladeras con precios y descuentos: Mihura 328l, Mihura 239l, Drean 314l, Drean 364l, Drean 264l]",
+        "user: ok, pero entonces hay alguna promo vigente en heladeras o no?",
+        "bot: Sí: las heladeras que te mostré tienen descuentos reflejados en sus precios actuales. No puedo confirmar una promoción adicional o general vigente para heladeras. Podés consultar las ofertas publicadas en [naldo.com.ar](https://www.naldo.com.ar/).",
+        "user: dale, gracias. por ahora no cancelo",
+        "bot: Entendido, dejamos la cancelación en pausa. ¿Necesitás algo más?"
+      ]
+    },
+    {
+      "test": "T-023",
+      "nombre": "Cambio de tema durante la cancelación",
+      "requisitos": [
+        "Flujos de Post-Venta › cancelarPedido",
+        "Configuración Global › Promociones"
+      ],
+      "tags": [
+        "cancelación",
+        "cambio de tema"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "El objetivo del test se cumple: al cambiar de tema cuando el bot pidió el número de pedido o email, el bot atendió la consulta de promociones y no volvió a forzar la cancelación (cierra la charla sin pedir el pedido). Pero falla el requisito 'Configuración Global › Promociones': 'Si no hay una promoción vigente informada, aclara que hay productos con promociones incluidas en su precio y ofrece la ayuda de una persona del equipo'. El bot aclaró que los precios contemplan promociones, pero en ninguno de sus turnos ofreció la ayuda de una persona del equipo (respondió '¿Te sirve este o buscás otra cosa?' y 'no puedo confirmar si esos descuentos son promociones vigentes'). Requisito de cancelarPedido (1 y 2) cumplido en el primer turno: indicó que hace falta el estado del pedido sin ofrecer asistencia adicional y pidió número de pedido o email. Nota: el envío del 'quiero cancelar mi pedido' terminó con completion 'timeout' pero con una respuesta del bot; el envío de la promo produjo 2 turnos de engine, se reporta el primero.",
+      "conversationUuid": "e68c226b-9c8c-4548-9c74-b119ce623dfb",
+      "datosCambiados": false,
+      "datosUsados": "Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15 (tienda a74dfe81-372a-48f6-a650-cb2cf1f1b18f). Sin datos específicos de pedido: el cliente no dio número de pedido ni email, según las instrucciones del test.",
+      "transcripcion": [
+        "user: quiero cancelar mi pedido",
+        "bot: Para avanzar con la cancelación, primero necesito validar el estado del pedido. ¿Me pasás el número de pedido o el email con el que hiciste la compra?",
+        "user: pará, antes decime si tienen alguna promo en heladeras, capaz no cancelo",
+        "bot: [carrusel de 5 heladeras: Mihura Plata 328l $715999 (20% OFF), Mihura 239l $609999 (18% OFF), Drean Cíclica 314l $889999 (27% OFF), Drean 364L $937999 (27% OFF), Drean 264L $703999 (32% OFF)]",
+        "bot: No puedo confirmar una promoción vigente específica para heladeras. Te muestro algunos modelos disponibles; los precios mostrados ya contemplan las promociones que tenga cada producto.\n\n¿Te sirve este o buscás otra cosa?",
+        "user: ah ok, y esos precios con descuento son promos vigentes o es el precio normal?",
+        "bot: Los precios que te mostré son los actuales del catálogo, pero no puedo confirmar si esos descuentos son promociones vigentes o si corresponden al precio habitual.",
+        "user: dale, gracias por la info, lo veo después. chau",
+        "bot: ¡Dale, hasta luego!"
+      ]
+    },
+    {
+      "test": "T-024",
+      "nombre": "Pedir un cambio de producto",
+      "requisitos": [
+        "Flujos de Post-Venta › Cambio"
+      ],
+      "tags": [
+        "cambios"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito: el bot debe derivar al sector support y enviar la FAQ de política de cambios, sin activar el flujo de posventa por garantía. Se cumple parcialmente: el primer mensaje activó el flujo Cambio (tool Cambio, topic 'Solicitud de cambio') y el bot dio condiciones generales (producto sin uso, en las mismas condiciones y con empaque original), pero no respondió el plazo (dijo que la información era contradictoria y derivó a un teléfono). Al pedir pasar con una persona, el bot intentó la derivación (request_human_agent) pero no había agentes disponibles y pidió el DNI 'para completar el reclamo', lo que se parece a un flujo de reclamo y no a una derivación a support con la FAQ de cambios. Además el primer turno terminó en timeout (180 s) aunque el bot respondió. Criterio de evaluación: la FAQ no quedó claramente enviada (sin plazo) y la derivación terminó en un reclamo con DNI, por lo que se marca ERROR; si se considera que la derivación a soporte basta, el resultado sería OK. No se activó explícitamente el flujo de garantía.",
+      "conversationUuid": "fbfd9f25-cf40-4946-bb90-8244cd1cd20b",
+      "datosCambiados": false,
+      "datosUsados": "Producto: silla, cambio por otro color, sin ninguna falla. Pregunta: cuántos días para cambiar. Sin datos específicos requeridos.",
+      "transcripcion": [
+        "user: quiero hacer un cambio de mi producto",
+        "bot: Hay información contradictoria sobre el plazo para realizar cambios. El producto debe estar sin uso y con su empaque original. Para confirmar el plazo, podés comunicarte con nuestro equipo al 0810-222-6253.",
+        "user: Compré una silla y quiero cambiarla por otro color, no tiene ninguna falla. ¿Cuántos días tengo para hacer el cambio?",
+        "bot: El producto debe estar sin uso, en las mismas condiciones y con su empaque original. Como la información sobre el plazo de cambios es contradictoria, podés comunicarte al 0810-222-6253 para que alguien del equipo te ayude.",
+        "user: Entiendo. ¿Me podés pasar con una persona del equipo para que me confirme el plazo?",
+        "bot: En este momento no hay agentes disponibles para atenderte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Dale, muchas gracias. Espero al equipo entonces. Chau.",
+        "bot: ¡De nada! Quedamos a la espera de tu DNI, solo con números y sin puntos, para completar el reclamo. Hasta luego."
+      ]
+    },
+    {
+      "test": "T-024",
+      "nombre": "Pedir un cambio de producto",
+      "requisitos": [
+        "Flujos de Post-Venta › Cambio"
+      ],
+      "tags": [
+        "cambios"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito: el bot debe derivar al sector support y enviar la FAQ de política de cambios, sin activar el flujo de posventa por garantía. Cumplido: el primer mensaje activó el flujo de cambio (topic 'Solicitud de cambio', tool Cambio ok). Ante la pregunta por los días, el bot envió la política de cambios (10 días posteriores a la compra, producto sin uso, en mismas condiciones y con empaque original) y derivó al sector de soporte indicando el teléfono 0810-222-6253. No se activó flujo de garantía ni se mencionaron roturas. Observaciones no bloqueantes: el primer turno tardó 180 s y terminó en timeout, y su respuesta ('La información sobre los plazos es contradictoria...') suena a error de contenido; la derivación es por teléfono y no una transferencia directa; la conversación generó un segundo turno interno (warning del send) que no afectó el resultado.",
+      "conversationUuid": "46ea9862-170c-4f33-bac7-f0eaf3b48a3c",
+      "datosCambiados": false,
+      "datosUsados": "Cliente que compró una silla y quiere cambiarla por otro color, sin fallas. Sin datos específicos requeridos. Bot uuid 0c73d3f4-7133-41f6-992b-67c0b50e3d15, sessionId dbe967e0-e800-488c-b7e5-5bf78e9fbd4c.",
+      "transcripcion": [
+        "user: quiero hacer un cambio de mi producto",
+        "bot: La información sobre los plazos es contradictoria. Para ayudarte con tu cambio, comunicate al 0810-222-6253. 📞",
+        "user: ¿Cuántos días tengo para hacer el cambio?",
+        "bot: Podés solicitar un cambio dentro de los 10 días posteriores a la compra. El producto debe estar sin uso, en las mismas condiciones y con su empaque original. Para gestionar tu solicitud, comunicate al 0810-222-6253.",
+        "user: Ok, perfecto, muchas gracias. Hablo con ellos.",
+        "bot: ¡De nada! ¿Necesitás ayuda con algo más?"
+      ]
+    },
+    {
+      "test": "T-024",
+      "nombre": "Pedir un cambio de producto",
+      "requisitos": [
+        "Flujos de Post-Venta › Cambio"
+      ],
+      "tags": [
+        "cambios"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito pide que el flujo Cambio se active con 'quiero hacer un cambio de mi producto' (activador de la lista), que el bot deriva al sector support y envie la FAQ de politica de cambios, sin activar posventa por garantia. Se cumplio: el primer mensaje activo el flujo Cambio (trace: tool.start/flow.start Cambio, sector resuelto a 'support', paso 'answer' tipo knowledge con la FAQ de cambios) y la respuesta contiene la politica (plazo de 10 dias, producto sin uso y con empaque original, contacto 0810-222-6253). No aparecio ninguna mencion de garantia, falla o rotura ni flujo de posventa por garantia. Observaciones no bloqueantes: (1) cuando el cliente pidio ser derivado a una persona, el bot no hizo handoff a un agente (backstop request_human_agent no disparado) sino que repitio la politica y el telefono; la instruccion del cliente solo pedia aceptar si el bot derivaba, asi que no aplica como fallo. (2) El texto de la FAQ del flujo dice 'aceptamos cambios hasta 30 dias corridos' y luego 'luego de los 10 dias no realizamos cambios', lo que es contradictorio; el bot respondio 10 dias.",
+      "conversationUuid": "f5a749b4-8bca-4b3d-a1eb-3491602938a6",
+      "datosCambiados": false,
+      "datosUsados": "Cliente que compro una silla y quiere cambiarla por otro color, sin falla. No se indico fecha de compra. Bot de prueba 0c73d3f4-7133-41f6-992b-67c0b50e3d15.",
+      "transcripcion": [
+        "user: quiero hacer un cambio de mi producto",
+        "bot: Podés solicitar un cambio dentro de los 10 días posteriores a la compra. El producto debe estar sin uso, en las mismas condiciones en que lo recibiste y con su empaque original.\n\nPara gestionarlo, comunicate al 0810-222-6253.",
+        "user: Ok, y cuántos días tengo para hacer el cambio?",
+        "bot: Podés solicitar un cambio dentro de los 10 días de la compra. El producto debe estar sin uso, en las mismas condiciones y con su empaque original. Para gestionarlo, comunicate al 0810-222-6253.",
+        "user: Ok, gracias. ¿Me podés derivar con alguien para gestionar el cambio?",
+        "bot: Podés solicitar un cambio dentro de los 10 días posteriores a la compra. El producto debe estar sin uso, en las mismas condiciones y con su empaque original.\n\nPara gestionarlo, comunicate al 0810-222-6253. 📞"
+      ]
+    },
+    {
+      "test": "T-025",
+      "nombre": "Querer cambiar algo de la compra",
+      "requisitos": [
+        "Flujos de Post-Venta › Cambio"
+      ],
+      "tags": [
+        "cambios"
+      ],
+      "iteracion": 1,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "El requisito pide que la frase 'quiero cambiar algo de mi compra' (activador de Cambio) active el flujo Cambio, derive al sector support y envíe la FAQ de política de cambios. La trace muestra tool.start/tool.end del workflow 'Cambio' (ok: true) con sector 'support' y la respuesta de la FAQ de política de cambios; el bot envió la política (plazo, producto sin uso, empaque original) y el número de contacto del equipo. Se cumple. Observación no bloqueante: la respuesta al usuario dice plazo de 10 días, mientras que la respuesta de la FAQ en la trace dice 30 días corridos, y en el segundo turno el bot afirma que 'la información sobre el plazo de cambios es contradictoria'. Conviene revisar la fuente de la FAQ. El primer turno terminó con completion 'timeout' (180 s) aunque el mensaje de respuesta llegó; el segundo turno generó dos engine turns (warning del sistema) y se reportó el primero.",
+      "conversationUuid": "3e642b24-0aac-4233-8f8e-f4389c0a6648",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos. Cliente que compró un juego de sábanas de la medida equivocada y quiere cambiarlo; pidió hablar con una persona.",
+      "transcripcion": [
+        "user: quiero cambiar algo de mi compra",
+        "bot: Podés solicitar un cambio hasta 10 días después de la compra. El producto debe estar sin uso, en las mismas condiciones y con su empaque original.\n\nPara gestionarlo, comunicate al 0810-222-6253.",
+        "user: Compré un juego de sábanas de la medida equivocada. Quiero cambiarlo por la medida correcta. ¿Me podés pasar con una persona para gestionarlo?",
+        "bot: La información sobre el plazo de cambios es contradictoria, así que prefiero no confirmarte uno. Para que te ayude alguien del equipo, comunicate al 0810-222-6253. El producto debe estar sin uso y con su empaque original."
+      ]
+    },
+    {
+      "test": "T-025",
+      "nombre": "Querer cambiar algo de la compra",
+      "requisitos": [
+        "Flujos de Post-Venta › Cambio"
+      ],
+      "tags": [
+        "cambios"
+      ],
+      "iteracion": 2,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "OK",
+      "motivo": "Requisito Post-Venta > Cambio: el activador 'quiero cambiar algo de mi compra' (listado en 'Sí activa') disparó el flujo Cambio (topics: Solicitud de cambio; tool 'Cambio' ejecutado ok). Comportamiento esperado 'Deriva al sector support y envía la FAQ de política de cambios': (1) la primera respuesta envió la FAQ de política de cambios (plazo 10 días, producto sin uso, empaque original, contacto 0810-222-6253); (2) tras aceptar la derivación, el bot ejecutó request_human_agent (ok), es decir intentó derivar a una persona. La derivación no se concretó porque no había agentes disponibles (respuesta del bot: vuelven el lunes a las 00:00), condición externa al bot. Observaciones no bloqueantes: el primer turno terminó en timeout a pesar de que la respuesta llegó (duración 181 s); la segunda respuesta del bot dijo 'La información sobre los plazos es contradictoria', lo que no está en la FAQ; un guardrail de knowledge_grounding reescribió la respuesta que pedía DNI; el bot pidió DNI para continuar la derivación, dato que no estaba en las instrucciones del cliente. No se verificó el sector específico 'support' desde la transcripción.",
+      "conversationUuid": "8c1c38fa-a825-43cb-b8c8-2bdaf0a7cead",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos (Requiere datos específicos: false). Cliente simulado que compró un juego de sábanas de medida equivocada y quiere cambiarlo por la medida correcta.",
+      "transcripcion": [
+        "user: quiero cambiar algo de mi compra",
+        "bot: Podés solicitar un cambio hasta 10 días después de la compra. El producto debe estar sin uso, en su empaque original y en las mismas condiciones en que lo recibiste. Para solicitarlo, comunicate al 0810-222-6253.",
+        "user: Compré un juego de sábanas pero me llegó la medida equivocada. Quiero cambiarlo por la medida correcta.",
+        "bot: Podés comunicarte al 0810-222-6253 para consultar por un cambio. La información sobre los plazos es contradictoria; si necesitás ayuda, puedo derivarte con alguien del equipo.",
+        "user: Sí, por favor, derivame con alguien del equipo. Gracias.",
+        "bot: En este momento no tengo agentes disponibles para atenderte para ofrecerte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Está bien, muchas gracias. Lo dejo para más tarde.",
+        "bot: Entiendo, lo dejamos para más tarde. Cuando quieras retomar el cambio, pasame tu DNI solo con números y sin puntos (por ejemplo: 30123456)."
+      ]
+    },
+    {
+      "test": "T-025",
+      "nombre": "Querer cambiar algo de la compra",
+      "requisitos": [
+        "Flujos de Post-Venta › Cambio"
+      ],
+      "tags": [
+        "cambios"
+      ],
+      "iteracion": 3,
+      "fecha": "2026-11-24T13:39:48-03:00",
+      "resultado": "ERROR",
+      "motivo": "Requisito: 'Deriva al sector support y envía la FAQ de política de cambios'. La FAQ de política sí se envió (10 días posteriores a la compra, producto sin uso, en condiciones y con empaque original, con teléfono 0810-222-6253) y el bot activó los tópicos 'Solicitud de cambio' y 'Modificación de pedido'. Pero la derivación a support no se completó: al aceptar el contacto humano, el bot ejecutó request_human_agent y respondió que no había agentes disponibles hasta el lunes a las 00:00, y pidió el DNI. Además, en el primer turno respondió que 'la información sobre los plazos para cambios es contradictoria', y el guardrail knowledge_grounding reescribió la respuesta de derivación porque el pedido de DNI no estaba respaldado por los datos. Parte del bloqueo (horario de agentes) es condición del entorno, pero el bot presentó la información de cambios como contradictoria y no derivó. Además, el primer turno terminó en timeout (180s) aunque la respuesta llegó. Revisar: criterio de política de cambios y pedido de DNI no fundamentado.",
+      "conversationUuid": "d3e277bd-2ae4-46ef-963a-b683e8b6d6da",
+      "datosCambiados": false,
+      "datosUsados": "Sin datos específicos. Cliente que compró juego de sábanas de medida equivocada, quiere cambiarlo por la medida correcta. No se proporcionó DNI ni otros datos personales.",
+      "transcripcion": [
+        "user: quiero cambiar algo de mi compra",
+        "bot: Podés solicitar un cambio dentro de los 10 días posteriores a la compra. El producto debe estar sin uso, en las mismas condiciones y con su empaque original. Comunicate al 0810-222-6253 para procesar la solicitud.",
+        "user: Compré un juego de sábanas de la medida equivocada, quiero cambiarlo por la medida correcta.",
+        "bot: La información sobre los plazos para cambios es contradictoria. Si querés, puedo ayudarte a contactar a una persona del equipo.",
+        "user: Sí, por favor, quiero que me contacte una persona del equipo.",
+        "bot: En este momento no tengo agentes disponibles para atenderte para ofrecerte. Nuestros agentes estaran disponibles de nuevo el lunes a las 00:00. ¿Cuál es tu número de DNI? Pasámelo solo con números, sin puntos (ej: 30123456).",
+        "user: Ah, bueno. Muchas gracias, eso es todo por ahora.",
+        "bot: Entendido. ¿Necesitás algo más?"
+      ]
+    }
+  ],
+  "noRealizadas": [],
+  "comparacion": []
+}
