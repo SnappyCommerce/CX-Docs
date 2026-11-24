@@ -16,6 +16,7 @@ Este repo es la fuente de verdad del equipo de CX de SnappyCommerce. Cada marca 
 ```
 Clientes/
 └── <Marca>/
+    ├── Owners <Marca>.md              ← responsables (Account Owner y CX, por Snappy ID)
     ├── Alcance Funcional <Marca>.md   ← qué necesita el cliente
     └── Tests <Marca>.json             ← cómo verificamos cada necesidad
 ```
